@@ -961,6 +961,14 @@ _utilities.register(
  },
  {
   "pkg": "volcenginecc",
+  "mod": "fwcenter/natFireWall",
+  "fqn": "pulumi_volcenginecc.fwcenter",
+  "classes": {
+   "volcenginecc:fwcenter/natFireWall:NatFireWall": "NatFireWall"
+  }
+ },
+ {
+  "pkg": "volcenginecc",
   "mod": "fwcenter/natFireWallControlPolicy",
   "fqn": "pulumi_volcenginecc.fwcenter",
   "classes": {
@@ -1149,6 +1157,14 @@ _utilities.register(
   "fqn": "pulumi_volcenginecc.id",
   "classes": {
    "volcenginecc:id/workloadPool:WorkloadPool": "WorkloadPool"
+  }
+ },
+ {
+  "pkg": "volcenginecc",
+  "mod": "kafka/acl",
+  "fqn": "pulumi_volcenginecc.kafka",
+  "classes": {
+   "volcenginecc:kafka/acl:Acl": "Acl"
   }
  },
  {
@@ -1533,6 +1549,14 @@ _utilities.register(
   "fqn": "pulumi_volcenginecc.rdsmysql",
   "classes": {
    "volcenginecc:rdsmysql/parameterTemplate:ParameterTemplate": "ParameterTemplate"
+  }
+ },
+ {
+  "pkg": "volcenginecc",
+  "mod": "rdsmysql/ssl",
+  "fqn": "pulumi_volcenginecc.rdsmysql",
+  "classes": {
+   "volcenginecc:rdsmysql/ssl:Ssl": "Ssl"
   }
  },
  {
@@ -1993,10 +2017,34 @@ _utilities.register(
  },
  {
   "pkg": "volcenginecc",
+  "mod": "transitrouter/transitRouterAttachmentToRouteTable",
+  "fqn": "pulumi_volcenginecc.transitrouter",
+  "classes": {
+   "volcenginecc:transitrouter/transitRouterAttachmentToRouteTable:TransitRouterAttachmentToRouteTable": "TransitRouterAttachmentToRouteTable"
+  }
+ },
+ {
+  "pkg": "volcenginecc",
   "mod": "transitrouter/transitRouterBandwidthPackage",
   "fqn": "pulumi_volcenginecc.transitrouter",
   "classes": {
    "volcenginecc:transitrouter/transitRouterBandwidthPackage:TransitRouterBandwidthPackage": "TransitRouterBandwidthPackage"
+  }
+ },
+ {
+  "pkg": "volcenginecc",
+  "mod": "transitrouter/transitRouterForwardPolicyTable",
+  "fqn": "pulumi_volcenginecc.transitrouter",
+  "classes": {
+   "volcenginecc:transitrouter/transitRouterForwardPolicyTable:TransitRouterForwardPolicyTable": "TransitRouterForwardPolicyTable"
+  }
+ },
+ {
+  "pkg": "volcenginecc",
+  "mod": "transitrouter/transitRouterMulticastDomain",
+  "fqn": "pulumi_volcenginecc.transitrouter",
+  "classes": {
+   "volcenginecc:transitrouter/transitRouterMulticastDomain:TransitRouterMulticastDomain": "TransitRouterMulticastDomain"
   }
  },
  {
@@ -2045,6 +2093,14 @@ _utilities.register(
   "fqn": "pulumi_volcenginecc.transitrouter",
   "classes": {
    "volcenginecc:transitrouter/transitRouterTrafficQosQueueEntry:TransitRouterTrafficQosQueueEntry": "TransitRouterTrafficQosQueueEntry"
+  }
+ },
+ {
+  "pkg": "volcenginecc",
+  "mod": "transitrouter/transitRouterTrafficQosQueuePolicy",
+  "fqn": "pulumi_volcenginecc.transitrouter",
+  "classes": {
+   "volcenginecc:transitrouter/transitRouterTrafficQosQueuePolicy:TransitRouterTrafficQosQueuePolicy": "TransitRouterTrafficQosQueuePolicy"
   }
  },
  {
@@ -2173,6 +2229,14 @@ _utilities.register(
   "fqn": "pulumi_volcenginecc.vefaas",
   "classes": {
    "volcenginecc:vefaas/timer:Timer": "Timer"
+  }
+ },
+ {
+  "pkg": "volcenginecc",
+  "mod": "vepfs/dataFlowTask",
+  "fqn": "pulumi_volcenginecc.vepfs",
+  "classes": {
+   "volcenginecc:vepfs/dataFlowTask:DataFlowTask": "DataFlowTask"
   }
  },
  {
@@ -2341,6 +2405,30 @@ _utilities.register(
   "fqn": "pulumi_volcenginecc.vpc",
   "classes": {
    "volcenginecc:vpc/ipPoolCidrBlock:IpPoolCidrBlock": "IpPoolCidrBlock"
+  }
+ },
+ {
+  "pkg": "volcenginecc",
+  "mod": "vpc/ipam",
+  "fqn": "pulumi_volcenginecc.vpc",
+  "classes": {
+   "volcenginecc:vpc/ipam:Ipam": "Ipam"
+  }
+ },
+ {
+  "pkg": "volcenginecc",
+  "mod": "vpc/ipamPool",
+  "fqn": "pulumi_volcenginecc.vpc",
+  "classes": {
+   "volcenginecc:vpc/ipamPool:IpamPool": "IpamPool"
+  }
+ },
+ {
+  "pkg": "volcenginecc",
+  "mod": "vpc/ipamScope",
+  "fqn": "pulumi_volcenginecc.vpc",
+  "classes": {
+   "volcenginecc:vpc/ipamScope:IpamScope": "IpamScope"
   }
  },
  {

@@ -29,8 +29,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &RouteTablePropagation{}
 	case "volcenginecc:transitrouter/transitRouter:TransitRouter":
 		r = &TransitRouter{}
+	case "volcenginecc:transitrouter/transitRouterAttachmentToRouteTable:TransitRouterAttachmentToRouteTable":
+		r = &TransitRouterAttachmentToRouteTable{}
 	case "volcenginecc:transitrouter/transitRouterBandwidthPackage:TransitRouterBandwidthPackage":
 		r = &TransitRouterBandwidthPackage{}
+	case "volcenginecc:transitrouter/transitRouterForwardPolicyTable:TransitRouterForwardPolicyTable":
+		r = &TransitRouterForwardPolicyTable{}
+	case "volcenginecc:transitrouter/transitRouterMulticastDomain:TransitRouterMulticastDomain":
+		r = &TransitRouterMulticastDomain{}
 	case "volcenginecc:transitrouter/transitRouterRouteEntry:TransitRouterRouteEntry":
 		r = &TransitRouterRouteEntry{}
 	case "volcenginecc:transitrouter/transitRouterRouteTable:TransitRouterRouteTable":
@@ -43,6 +49,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &TransitRouterTrafficQosMarkingPolicy{}
 	case "volcenginecc:transitrouter/transitRouterTrafficQosQueueEntry:TransitRouterTrafficQosQueueEntry":
 		r = &TransitRouterTrafficQosQueueEntry{}
+	case "volcenginecc:transitrouter/transitRouterTrafficQosQueuePolicy:TransitRouterTrafficQosQueuePolicy":
+		r = &TransitRouterTrafficQosQueuePolicy{}
 	case "volcenginecc:transitrouter/vpcAttachment:VpcAttachment":
 		r = &VpcAttachment{}
 	case "volcenginecc:transitrouter/vpnAttachment:VpnAttachment":
@@ -82,7 +90,22 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"volcenginecc",
+		"transitrouter/transitRouterAttachmentToRouteTable",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"volcenginecc",
 		"transitrouter/transitRouterBandwidthPackage",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"volcenginecc",
+		"transitrouter/transitRouterForwardPolicyTable",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"volcenginecc",
+		"transitrouter/transitRouterMulticastDomain",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -113,6 +136,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"volcenginecc",
 		"transitrouter/transitRouterTrafficQosQueueEntry",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"volcenginecc",
+		"transitrouter/transitRouterTrafficQosQueuePolicy",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

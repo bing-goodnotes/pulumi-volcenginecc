@@ -10,6 +10,8 @@ import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.resources.InvokeArgs;
 import com.volcengine.volcenginecc.Utilities;
+import com.volcengine.volcenginecc.kafka.inputs.GetAclArgs;
+import com.volcengine.volcenginecc.kafka.inputs.GetAclPlainArgs;
 import com.volcengine.volcenginecc.kafka.inputs.GetAllowListArgs;
 import com.volcengine.volcenginecc.kafka.inputs.GetAllowListPlainArgs;
 import com.volcengine.volcenginecc.kafka.inputs.GetGroupArgs;
@@ -20,6 +22,8 @@ import com.volcengine.volcenginecc.kafka.inputs.GetTopicArgs;
 import com.volcengine.volcenginecc.kafka.inputs.GetTopicPlainArgs;
 import com.volcengine.volcenginecc.kafka.inputs.GetUserArgs;
 import com.volcengine.volcenginecc.kafka.inputs.GetUserPlainArgs;
+import com.volcengine.volcenginecc.kafka.outputs.GetAclResult;
+import com.volcengine.volcenginecc.kafka.outputs.GetAclsResult;
 import com.volcengine.volcenginecc.kafka.outputs.GetAllowListResult;
 import com.volcengine.volcenginecc.kafka.outputs.GetAllowListsResult;
 import com.volcengine.volcenginecc.kafka.outputs.GetGroupResult;
@@ -33,6 +37,90 @@ import com.volcengine.volcenginecc.kafka.outputs.GetUsersResult;
 import java.util.concurrent.CompletableFuture;
 
 public final class KafkaFunctions {
+    /**
+     * Data Source schema for Volcengine::Kafka::ACL
+     * 
+     */
+    public static Output<GetAclResult> getAcl(GetAclArgs args) {
+        return getAcl(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::Kafka::ACL
+     * 
+     */
+    public static CompletableFuture<GetAclResult> getAclPlain(GetAclPlainArgs args) {
+        return getAclPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::Kafka::ACL
+     * 
+     */
+    public static Output<GetAclResult> getAcl(GetAclArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:kafka/getAcl:getAcl", TypeShape.of(GetAclResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::Kafka::ACL
+     * 
+     */
+    public static Output<GetAclResult> getAcl(GetAclArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:kafka/getAcl:getAcl", TypeShape.of(GetAclResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::Kafka::ACL
+     * 
+     */
+    public static CompletableFuture<GetAclResult> getAclPlain(GetAclPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:kafka/getAcl:getAcl", TypeShape.of(GetAclResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::Kafka::ACL
+     * 
+     */
+    public static Output<GetAclsResult> getAcls() {
+        return getAcls(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::Kafka::ACL
+     * 
+     */
+    public static CompletableFuture<GetAclsResult> getAclsPlain() {
+        return getAclsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::Kafka::ACL
+     * 
+     */
+    public static Output<GetAclsResult> getAcls(InvokeArgs args) {
+        return getAcls(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::Kafka::ACL
+     * 
+     */
+    public static CompletableFuture<GetAclsResult> getAclsPlain(InvokeArgs args) {
+        return getAclsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::Kafka::ACL
+     * 
+     */
+    public static Output<GetAclsResult> getAcls(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:kafka/getAcls:getAcls", TypeShape.of(GetAclsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::Kafka::ACL
+     * 
+     */
+    public static Output<GetAclsResult> getAcls(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:kafka/getAcls:getAcls", TypeShape.of(GetAclsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::Kafka::ACL
+     * 
+     */
+    public static CompletableFuture<GetAclsResult> getAclsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:kafka/getAcls:getAcls", TypeShape.of(GetAclsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Volcengine::Kafka::AllowList
      * 

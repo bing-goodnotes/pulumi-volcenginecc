@@ -28,6 +28,8 @@ import com.volcengine.volcenginecc.rdsmysql.inputs.GetInstanceReadonlyNodeArgs;
 import com.volcengine.volcenginecc.rdsmysql.inputs.GetInstanceReadonlyNodePlainArgs;
 import com.volcengine.volcenginecc.rdsmysql.inputs.GetParameterTemplateArgs;
 import com.volcengine.volcenginecc.rdsmysql.inputs.GetParameterTemplatePlainArgs;
+import com.volcengine.volcenginecc.rdsmysql.inputs.GetSslArgs;
+import com.volcengine.volcenginecc.rdsmysql.inputs.GetSslPlainArgs;
 import com.volcengine.volcenginecc.rdsmysql.outputs.GetAllowListResult;
 import com.volcengine.volcenginecc.rdsmysql.outputs.GetAllowListsResult;
 import com.volcengine.volcenginecc.rdsmysql.outputs.GetBackupResult;
@@ -46,6 +48,8 @@ import com.volcengine.volcenginecc.rdsmysql.outputs.GetInstanceResult;
 import com.volcengine.volcenginecc.rdsmysql.outputs.GetInstancesResult;
 import com.volcengine.volcenginecc.rdsmysql.outputs.GetParameterTemplateResult;
 import com.volcengine.volcenginecc.rdsmysql.outputs.GetParameterTemplatesResult;
+import com.volcengine.volcenginecc.rdsmysql.outputs.GetSslResult;
+import com.volcengine.volcenginecc.rdsmysql.outputs.GetSslsResult;
 import java.util.concurrent.CompletableFuture;
 
 public final class RdsmysqlFunctions {
@@ -804,5 +808,89 @@ public final class RdsmysqlFunctions {
      */
     public static CompletableFuture<GetParameterTemplatesResult> getParameterTemplatesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("volcenginecc:rdsmysql/getParameterTemplates:getParameterTemplates", TypeShape.of(GetParameterTemplatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::RDSMySQL::Ssl
+     * 
+     */
+    public static Output<GetSslResult> getSsl(GetSslArgs args) {
+        return getSsl(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::RDSMySQL::Ssl
+     * 
+     */
+    public static CompletableFuture<GetSslResult> getSslPlain(GetSslPlainArgs args) {
+        return getSslPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::RDSMySQL::Ssl
+     * 
+     */
+    public static Output<GetSslResult> getSsl(GetSslArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:rdsmysql/getSsl:getSsl", TypeShape.of(GetSslResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::RDSMySQL::Ssl
+     * 
+     */
+    public static Output<GetSslResult> getSsl(GetSslArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:rdsmysql/getSsl:getSsl", TypeShape.of(GetSslResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::RDSMySQL::Ssl
+     * 
+     */
+    public static CompletableFuture<GetSslResult> getSslPlain(GetSslPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:rdsmysql/getSsl:getSsl", TypeShape.of(GetSslResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::RDSMySQL::Ssl
+     * 
+     */
+    public static Output<GetSslsResult> getSsls() {
+        return getSsls(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::RDSMySQL::Ssl
+     * 
+     */
+    public static CompletableFuture<GetSslsResult> getSslsPlain() {
+        return getSslsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::RDSMySQL::Ssl
+     * 
+     */
+    public static Output<GetSslsResult> getSsls(InvokeArgs args) {
+        return getSsls(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::RDSMySQL::Ssl
+     * 
+     */
+    public static CompletableFuture<GetSslsResult> getSslsPlain(InvokeArgs args) {
+        return getSslsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::RDSMySQL::Ssl
+     * 
+     */
+    public static Output<GetSslsResult> getSsls(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:rdsmysql/getSsls:getSsls", TypeShape.of(GetSslsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::RDSMySQL::Ssl
+     * 
+     */
+    public static Output<GetSslsResult> getSsls(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:rdsmysql/getSsls:getSsls", TypeShape.of(GetSslsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::RDSMySQL::Ssl
+     * 
+     */
+    public static CompletableFuture<GetSslsResult> getSslsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:rdsmysql/getSsls:getSsls", TypeShape.of(GetSslsResult.class), args, Utilities.withVersion(options));
     }
 }

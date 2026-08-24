@@ -2201,6 +2201,9 @@
                     }
                 }
             },
+            "volcenginecc_fwcenter_nat_fire_wall": {
+                "current": "volcenginecc:fwcenter/natFireWall:NatFireWall"
+            },
             "volcenginecc_fwcenter_nat_fire_wall_control_policy": {
                 "current": "volcenginecc:fwcenter/natFireWallControlPolicy:NatFireWallControlPolicy",
                 "fields": {
@@ -2610,6 +2613,9 @@
                         "maxItemsOne": false
                     }
                 }
+            },
+            "volcenginecc_kafka_acl": {
+                "current": "volcenginecc:kafka/acl:Acl"
             },
             "volcenginecc_kafka_allow_list": {
                 "current": "volcenginecc:kafka/allowList:AllowList",
@@ -3221,6 +3227,9 @@
                         "maxItemsOne": false
                     }
                 }
+            },
+            "volcenginecc_rdsmysql_ssl": {
+                "current": "volcenginecc:rdsmysql/ssl:Ssl"
             },
             "volcenginecc_rdspostgresql_allow_list": {
                 "current": "volcenginecc:rdspostgresql/allowList:AllowList",
@@ -4175,12 +4184,31 @@
                     }
                 }
             },
+            "volcenginecc_transitrouter_transit_router_attachment_to_route_table": {
+                "current": "volcenginecc:transitrouter/transitRouterAttachmentToRouteTable:TransitRouterAttachmentToRouteTable"
+            },
             "volcenginecc_transitrouter_transit_router_bandwidth_package": {
                 "current": "volcenginecc:transitrouter/transitRouterBandwidthPackage:TransitRouterBandwidthPackage",
                 "fields": {
                     "allocations": {
                         "maxItemsOne": false
                     },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "volcenginecc_transitrouter_transit_router_forward_policy_table": {
+                "current": "volcenginecc:transitrouter/transitRouterForwardPolicyTable:TransitRouterForwardPolicyTable",
+                "fields": {
+                    "transit_router_attachment_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "volcenginecc_transitrouter_transit_router_multicast_domain": {
+                "current": "volcenginecc:transitrouter/transitRouterMulticastDomain:TransitRouterMulticastDomain",
+                "fields": {
                     "tags": {
                         "maxItemsOne": false
                     }
@@ -4218,6 +4246,9 @@
                         "maxItemsOne": false
                     }
                 }
+            },
+            "volcenginecc_transitrouter_transit_router_traffic_qos_queue_policy": {
+                "current": "volcenginecc:transitrouter/transitRouterTrafficQosQueuePolicy:TransitRouterTrafficQosQueuePolicy"
             },
             "volcenginecc_transitrouter_vpc_attachment": {
                 "current": "volcenginecc:transitrouter/vpcAttachment:VpcAttachment",
@@ -4461,6 +4492,14 @@
             },
             "volcenginecc_vefaas_timer": {
                 "current": "volcenginecc:vefaas/timer:Timer"
+            },
+            "volcenginecc_vepfs_data_flow_task": {
+                "current": "volcenginecc:vepfs/dataFlowTask:DataFlowTask",
+                "fields": {
+                    "reports": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "volcenginecc_vepfs_fileset": {
                 "current": "volcenginecc:vepfs/fileset:Fileset"
@@ -4872,6 +4911,33 @@
             },
             "volcenginecc_vpc_ip_pool_cidr_block": {
                 "current": "volcenginecc:vpc/ipPoolCidrBlock:IpPoolCidrBlock"
+            },
+            "volcenginecc_vpc_ipam": {
+                "current": "volcenginecc:vpc/ipam:Ipam",
+                "fields": {
+                    "operating_regions": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "volcenginecc_vpc_ipam_pool": {
+                "current": "volcenginecc:vpc/ipamPool:IpamPool",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "volcenginecc_vpc_ipam_scope": {
+                "current": "volcenginecc:vpc/ipamScope:IpamScope",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "volcenginecc_vpc_ipv6_address_bandwidth": {
                 "current": "volcenginecc:vpc/ipv6AddressBandwidth:Ipv6AddressBandwidth",
@@ -8206,6 +8272,9 @@
                     }
                 }
             },
+            "volcenginecc_fwcenter_nat_fire_wall": {
+                "current": "volcenginecc:fwcenter/getNatFireWall:getNatFireWall"
+            },
             "volcenginecc_fwcenter_nat_fire_wall_control_policies": {
                 "current": "volcenginecc:fwcenter/getNatFireWallControlPolicies:getNatFireWallControlPolicies",
                 "fields": {
@@ -8239,6 +8308,14 @@
                         "maxItemsOne": false
                     },
                     "source_cidr_list_v1": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "volcenginecc_fwcenter_nat_fire_walls": {
+                "current": "volcenginecc:fwcenter/getNatFireWalls:getNatFireWalls",
+                "fields": {
+                    "ids": {
                         "maxItemsOne": false
                     }
                 }
@@ -8809,6 +8886,17 @@
             },
             "volcenginecc_id_workload_pools": {
                 "current": "volcenginecc:id/getWorkloadPools:getWorkloadPools",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "volcenginecc_kafka_acl": {
+                "current": "volcenginecc:kafka/getAcl:getAcl"
+            },
+            "volcenginecc_kafka_acls": {
+                "current": "volcenginecc:kafka/getAcls:getAcls",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -9811,6 +9899,17 @@
             },
             "volcenginecc_rdsmysql_parameter_templates": {
                 "current": "volcenginecc:rdsmysql/getParameterTemplates:getParameterTemplates",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "volcenginecc_rdsmysql_ssl": {
+                "current": "volcenginecc:rdsmysql/getSsl:getSsl"
+            },
+            "volcenginecc_rdsmysql_ssls": {
+                "current": "volcenginecc:rdsmysql/getSsls:getSsls",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -11275,6 +11374,17 @@
                     }
                 }
             },
+            "volcenginecc_transitrouter_transit_router_attachment_to_route_table": {
+                "current": "volcenginecc:transitrouter/getTransitRouterAttachmentToRouteTable:getTransitRouterAttachmentToRouteTable"
+            },
+            "volcenginecc_transitrouter_transit_router_attachment_to_route_tables": {
+                "current": "volcenginecc:transitrouter/getTransitRouterAttachmentToRouteTables:getTransitRouterAttachmentToRouteTables",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "volcenginecc_transitrouter_transit_router_bandwidth_package": {
                 "current": "volcenginecc:transitrouter/getTransitRouterBandwidthPackage:getTransitRouterBandwidthPackage",
                 "fields": {
@@ -11288,6 +11398,38 @@
             },
             "volcenginecc_transitrouter_transit_router_bandwidth_packages": {
                 "current": "volcenginecc:transitrouter/getTransitRouterBandwidthPackages:getTransitRouterBandwidthPackages",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "volcenginecc_transitrouter_transit_router_forward_policy_table": {
+                "current": "volcenginecc:transitrouter/getTransitRouterForwardPolicyTable:getTransitRouterForwardPolicyTable",
+                "fields": {
+                    "transit_router_attachment_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "volcenginecc_transitrouter_transit_router_forward_policy_tables": {
+                "current": "volcenginecc:transitrouter/getTransitRouterForwardPolicyTables:getTransitRouterForwardPolicyTables",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "volcenginecc_transitrouter_transit_router_multicast_domain": {
+                "current": "volcenginecc:transitrouter/getTransitRouterMulticastDomain:getTransitRouterMulticastDomain",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "volcenginecc_transitrouter_transit_router_multicast_domains": {
+                "current": "volcenginecc:transitrouter/getTransitRouterMulticastDomains:getTransitRouterMulticastDomains",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -11374,6 +11516,17 @@
                         "maxItemsOne": false
                     }
                 }
+            },
+            "volcenginecc_transitrouter_transit_router_traffic_qos_queue_policies": {
+                "current": "volcenginecc:transitrouter/getTransitRouterTrafficQosQueuePolicies:getTransitRouterTrafficQosQueuePolicies",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "volcenginecc_transitrouter_transit_router_traffic_qos_queue_policy": {
+                "current": "volcenginecc:transitrouter/getTransitRouterTrafficQosQueuePolicy:getTransitRouterTrafficQosQueuePolicy"
             },
             "volcenginecc_transitrouter_transit_routers": {
                 "current": "volcenginecc:transitrouter/getTransitRouters:getTransitRouters",
@@ -11748,6 +11901,22 @@
             },
             "volcenginecc_vefaas_timers": {
                 "current": "volcenginecc:vefaas/getTimers:getTimers",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "volcenginecc_vepfs_data_flow_task": {
+                "current": "volcenginecc:vepfs/getDataFlowTask:getDataFlowTask",
+                "fields": {
+                    "reports": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "volcenginecc_vepfs_data_flow_tasks": {
+                "current": "volcenginecc:vepfs/getDataFlowTasks:getDataFlowTasks",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -12327,6 +12496,57 @@
             },
             "volcenginecc_vpc_ip_pools": {
                 "current": "volcenginecc:vpc/getIpPools:getIpPools",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "volcenginecc_vpc_ipam": {
+                "current": "volcenginecc:vpc/getIpam:getIpam",
+                "fields": {
+                    "operating_regions": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "volcenginecc_vpc_ipam_pool": {
+                "current": "volcenginecc:vpc/getIpamPool:getIpamPool",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "volcenginecc_vpc_ipam_pools": {
+                "current": "volcenginecc:vpc/getIpamPools:getIpamPools",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "volcenginecc_vpc_ipam_scope": {
+                "current": "volcenginecc:vpc/getIpamScope:getIpamScope",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "volcenginecc_vpc_ipam_scopes": {
+                "current": "volcenginecc:vpc/getIpamScopes:getIpamScopes",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "volcenginecc_vpc_ipams": {
+                "current": "volcenginecc:vpc/getIpams:getIpams",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -12951,6 +13171,7 @@
             "volcenginecc_fwcenter_address_book": {},
             "volcenginecc_fwcenter_control_policy": {},
             "volcenginecc_fwcenter_dns_control_policy": {},
+            "volcenginecc_fwcenter_nat_fire_wall": {},
             "volcenginecc_fwcenter_nat_fire_wall_control_policy": {},
             "volcenginecc_fwcenter_vpc_fire_wall_acl_rule": {},
             "volcenginecc_gtm_gtm": {},
@@ -12975,6 +13196,7 @@
             "volcenginecc_id_service": {},
             "volcenginecc_id_user_pool": {},
             "volcenginecc_id_workload_pool": {},
+            "volcenginecc_kafka_acl": {},
             "volcenginecc_kafka_allow_list": {},
             "volcenginecc_kafka_group": {},
             "volcenginecc_kafka_instance": {},
@@ -13023,6 +13245,7 @@
             "volcenginecc_rdsmysql_instance": {},
             "volcenginecc_rdsmysql_instance_readonly_node": {},
             "volcenginecc_rdsmysql_parameter_template": {},
+            "volcenginecc_rdsmysql_ssl": {},
             "volcenginecc_rdspostgresql_allow_list": {},
             "volcenginecc_rdspostgresql_backup": {},
             "volcenginecc_rdspostgresql_database": {},
@@ -13080,13 +13303,17 @@
             "volcenginecc_transitrouter_peer_attachment": {},
             "volcenginecc_transitrouter_route_table_propagation": {},
             "volcenginecc_transitrouter_transit_router": {},
+            "volcenginecc_transitrouter_transit_router_attachment_to_route_table": {},
             "volcenginecc_transitrouter_transit_router_bandwidth_package": {},
+            "volcenginecc_transitrouter_transit_router_forward_policy_table": {},
+            "volcenginecc_transitrouter_transit_router_multicast_domain": {},
             "volcenginecc_transitrouter_transit_router_route_entry": {},
             "volcenginecc_transitrouter_transit_router_route_table": {},
             "volcenginecc_transitrouter_transit_router_route_table_association": {},
             "volcenginecc_transitrouter_transit_router_traffic_qos_marking_entry": {},
             "volcenginecc_transitrouter_transit_router_traffic_qos_marking_policy": {},
             "volcenginecc_transitrouter_transit_router_traffic_qos_queue_entry": {},
+            "volcenginecc_transitrouter_transit_router_traffic_qos_queue_policy": {},
             "volcenginecc_transitrouter_vpc_attachment": {},
             "volcenginecc_transitrouter_vpn_attachment": {},
             "volcenginecc_vedbm_account": {},
@@ -13103,6 +13330,7 @@
             "volcenginecc_vefaas_release": {},
             "volcenginecc_vefaas_sandbox": {},
             "volcenginecc_vefaas_timer": {},
+            "volcenginecc_vepfs_data_flow_task": {},
             "volcenginecc_vepfs_fileset": {},
             "volcenginecc_vepfs_instance": {},
             "volcenginecc_vepfs_mount_service": {},
@@ -13124,6 +13352,9 @@
             "volcenginecc_vpc_ha_vip": {},
             "volcenginecc_vpc_ip_pool": {},
             "volcenginecc_vpc_ip_pool_cidr_block": {},
+            "volcenginecc_vpc_ipam": {},
+            "volcenginecc_vpc_ipam_pool": {},
+            "volcenginecc_vpc_ipam_scope": {},
             "volcenginecc_vpc_ipv6_address_bandwidth": {},
             "volcenginecc_vpc_ipv6_gateway": {},
             "volcenginecc_vpc_network_acl": {},

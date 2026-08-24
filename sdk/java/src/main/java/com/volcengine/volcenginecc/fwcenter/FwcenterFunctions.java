@@ -16,8 +16,10 @@ import com.volcengine.volcenginecc.fwcenter.inputs.GetControlPolicyArgs;
 import com.volcengine.volcenginecc.fwcenter.inputs.GetControlPolicyPlainArgs;
 import com.volcengine.volcenginecc.fwcenter.inputs.GetDnsControlPolicyArgs;
 import com.volcengine.volcenginecc.fwcenter.inputs.GetDnsControlPolicyPlainArgs;
+import com.volcengine.volcenginecc.fwcenter.inputs.GetNatFireWallArgs;
 import com.volcengine.volcenginecc.fwcenter.inputs.GetNatFireWallControlPolicyArgs;
 import com.volcengine.volcenginecc.fwcenter.inputs.GetNatFireWallControlPolicyPlainArgs;
+import com.volcengine.volcenginecc.fwcenter.inputs.GetNatFireWallPlainArgs;
 import com.volcengine.volcenginecc.fwcenter.inputs.GetVpcFireWallAclRuleArgs;
 import com.volcengine.volcenginecc.fwcenter.inputs.GetVpcFireWallAclRulePlainArgs;
 import com.volcengine.volcenginecc.fwcenter.outputs.GetAddressBookResult;
@@ -28,6 +30,8 @@ import com.volcengine.volcenginecc.fwcenter.outputs.GetDnsControlPoliciesResult;
 import com.volcengine.volcenginecc.fwcenter.outputs.GetDnsControlPolicyResult;
 import com.volcengine.volcenginecc.fwcenter.outputs.GetNatFireWallControlPoliciesResult;
 import com.volcengine.volcenginecc.fwcenter.outputs.GetNatFireWallControlPolicyResult;
+import com.volcengine.volcenginecc.fwcenter.outputs.GetNatFireWallResult;
+import com.volcengine.volcenginecc.fwcenter.outputs.GetNatFireWallsResult;
 import com.volcengine.volcenginecc.fwcenter.outputs.GetVpcFireWallAclRuleResult;
 import com.volcengine.volcenginecc.fwcenter.outputs.GetVpcFireWallAclRulesResult;
 import java.util.concurrent.CompletableFuture;
@@ -286,6 +290,41 @@ public final class FwcenterFunctions {
         return Deployment.getInstance().invokeAsync("volcenginecc:fwcenter/getDnsControlPolicy:getDnsControlPolicy", TypeShape.of(GetDnsControlPolicyResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * Data Source schema for Volcengine::FWCenter::NATFireWall
+     * 
+     */
+    public static Output<GetNatFireWallResult> getNatFireWall(GetNatFireWallArgs args) {
+        return getNatFireWall(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::FWCenter::NATFireWall
+     * 
+     */
+    public static CompletableFuture<GetNatFireWallResult> getNatFireWallPlain(GetNatFireWallPlainArgs args) {
+        return getNatFireWallPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::FWCenter::NATFireWall
+     * 
+     */
+    public static Output<GetNatFireWallResult> getNatFireWall(GetNatFireWallArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:fwcenter/getNatFireWall:getNatFireWall", TypeShape.of(GetNatFireWallResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::FWCenter::NATFireWall
+     * 
+     */
+    public static Output<GetNatFireWallResult> getNatFireWall(GetNatFireWallArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:fwcenter/getNatFireWall:getNatFireWall", TypeShape.of(GetNatFireWallResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::FWCenter::NATFireWall
+     * 
+     */
+    public static CompletableFuture<GetNatFireWallResult> getNatFireWallPlain(GetNatFireWallPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:fwcenter/getNatFireWall:getNatFireWall", TypeShape.of(GetNatFireWallResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * Plural Data Source schema for Volcengine::FWCenter::NatFireWallControlPolicy
      * 
      */
@@ -368,6 +407,55 @@ public final class FwcenterFunctions {
      */
     public static CompletableFuture<GetNatFireWallControlPolicyResult> getNatFireWallControlPolicyPlain(GetNatFireWallControlPolicyPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("volcenginecc:fwcenter/getNatFireWallControlPolicy:getNatFireWallControlPolicy", TypeShape.of(GetNatFireWallControlPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::FWCenter::NATFireWall
+     * 
+     */
+    public static Output<GetNatFireWallsResult> getNatFireWalls() {
+        return getNatFireWalls(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::FWCenter::NATFireWall
+     * 
+     */
+    public static CompletableFuture<GetNatFireWallsResult> getNatFireWallsPlain() {
+        return getNatFireWallsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::FWCenter::NATFireWall
+     * 
+     */
+    public static Output<GetNatFireWallsResult> getNatFireWalls(InvokeArgs args) {
+        return getNatFireWalls(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::FWCenter::NATFireWall
+     * 
+     */
+    public static CompletableFuture<GetNatFireWallsResult> getNatFireWallsPlain(InvokeArgs args) {
+        return getNatFireWallsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::FWCenter::NATFireWall
+     * 
+     */
+    public static Output<GetNatFireWallsResult> getNatFireWalls(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:fwcenter/getNatFireWalls:getNatFireWalls", TypeShape.of(GetNatFireWallsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::FWCenter::NATFireWall
+     * 
+     */
+    public static Output<GetNatFireWallsResult> getNatFireWalls(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:fwcenter/getNatFireWalls:getNatFireWalls", TypeShape.of(GetNatFireWallsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::FWCenter::NATFireWall
+     * 
+     */
+    public static CompletableFuture<GetNatFireWallsResult> getNatFireWallsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:fwcenter/getNatFireWalls:getNatFireWalls", TypeShape.of(GetNatFireWallsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Volcengine::FWCenter::VpcFirewallAclRule
