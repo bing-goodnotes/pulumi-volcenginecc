@@ -4,7 +4,7 @@ go 1.25.8
 
 require (
 	github.com/hashicorp/terraform-plugin-framework v1.19.0
-	github.com/volcengine/terraform-provider-volcenginecc v0.0.65
+	github.com/volcengine/terraform-provider-volcenginecc v0.0.66
 )
 
 require (

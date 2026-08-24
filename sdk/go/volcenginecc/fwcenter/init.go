@@ -27,6 +27,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ControlPolicy{}
 	case "volcenginecc:fwcenter/dnsControlPolicy:DnsControlPolicy":
 		r = &DnsControlPolicy{}
+	case "volcenginecc:fwcenter/natFireWall:NatFireWall":
+		r = &NatFireWall{}
 	case "volcenginecc:fwcenter/natFireWallControlPolicy:NatFireWallControlPolicy":
 		r = &NatFireWallControlPolicy{}
 	case "volcenginecc:fwcenter/vpcFireWallAclRule:VpcFireWallAclRule":
@@ -57,6 +59,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"volcenginecc",
 		"fwcenter/dnsControlPolicy",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"volcenginecc",
+		"fwcenter/natFireWall",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

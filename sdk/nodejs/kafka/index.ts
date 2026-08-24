@@ -5,10 +5,25 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { AclArgs, AclState } from "./acl";
+export type Acl = import("./acl").Acl;
+export const Acl: typeof import("./acl").Acl = null as any;
+utilities.lazyLoad(exports, ["Acl"], () => require("./acl"));
+
 export { AllowListArgs, AllowListState } from "./allowList";
 export type AllowList = import("./allowList").AllowList;
 export const AllowList: typeof import("./allowList").AllowList = null as any;
 utilities.lazyLoad(exports, ["AllowList"], () => require("./allowList"));
+
+export { GetAclArgs, GetAclResult, GetAclOutputArgs } from "./getAcl";
+export const getAcl: typeof import("./getAcl").getAcl = null as any;
+export const getAclOutput: typeof import("./getAcl").getAclOutput = null as any;
+utilities.lazyLoad(exports, ["getAcl","getAclOutput"], () => require("./getAcl"));
+
+export { GetAclsResult } from "./getAcls";
+export const getAcls: typeof import("./getAcls").getAcls = null as any;
+export const getAclsOutput: typeof import("./getAcls").getAclsOutput = null as any;
+utilities.lazyLoad(exports, ["getAcls","getAclsOutput"], () => require("./getAcls"));
 
 export { GetAllowListArgs, GetAllowListResult, GetAllowListOutputArgs } from "./getAllowList";
 export const getAllowList: typeof import("./getAllowList").getAllowList = null as any;
@@ -85,6 +100,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "volcenginecc:kafka/acl:Acl":
+                return new Acl(name, <any>undefined, { urn })
             case "volcenginecc:kafka/allowList:AllowList":
                 return new AllowList(name, <any>undefined, { urn })
             case "volcenginecc:kafka/group:Group":
@@ -100,6 +117,7 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("volcenginecc", "kafka/acl", _module)
 pulumi.runtime.registerResourceModule("volcenginecc", "kafka/allowList", _module)
 pulumi.runtime.registerResourceModule("volcenginecc", "kafka/group", _module)
 pulumi.runtime.registerResourceModule("volcenginecc", "kafka/instance", _module)

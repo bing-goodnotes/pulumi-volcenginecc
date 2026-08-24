@@ -21,6 +21,8 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "volcenginecc:vepfs/dataFlowTask:DataFlowTask":
+		r = &DataFlowTask{}
 	case "volcenginecc:vepfs/fileset:Fileset":
 		r = &Fileset{}
 	case "volcenginecc:vepfs/instance:Instance":
@@ -40,6 +42,11 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"volcenginecc",
+		"vepfs/dataFlowTask",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"volcenginecc",
 		"vepfs/fileset",

@@ -10,12 +10,16 @@ import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.resources.InvokeArgs;
 import com.volcengine.volcenginecc.Utilities;
+import com.volcengine.volcenginecc.vepfs.inputs.GetDataFlowTaskArgs;
+import com.volcengine.volcenginecc.vepfs.inputs.GetDataFlowTaskPlainArgs;
 import com.volcengine.volcenginecc.vepfs.inputs.GetFilesetArgs;
 import com.volcengine.volcenginecc.vepfs.inputs.GetFilesetPlainArgs;
 import com.volcengine.volcenginecc.vepfs.inputs.GetInstanceArgs;
 import com.volcengine.volcenginecc.vepfs.inputs.GetInstancePlainArgs;
 import com.volcengine.volcenginecc.vepfs.inputs.GetMountServiceArgs;
 import com.volcengine.volcenginecc.vepfs.inputs.GetMountServicePlainArgs;
+import com.volcengine.volcenginecc.vepfs.outputs.GetDataFlowTaskResult;
+import com.volcengine.volcenginecc.vepfs.outputs.GetDataFlowTasksResult;
 import com.volcengine.volcenginecc.vepfs.outputs.GetFilesetResult;
 import com.volcengine.volcenginecc.vepfs.outputs.GetFilesetsResult;
 import com.volcengine.volcenginecc.vepfs.outputs.GetInstanceResult;
@@ -25,6 +29,90 @@ import com.volcengine.volcenginecc.vepfs.outputs.GetMountServicesResult;
 import java.util.concurrent.CompletableFuture;
 
 public final class VepfsFunctions {
+    /**
+     * Data Source schema for Volcengine::VEPFS::DataFlowTask
+     * 
+     */
+    public static Output<GetDataFlowTaskResult> getDataFlowTask(GetDataFlowTaskArgs args) {
+        return getDataFlowTask(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::VEPFS::DataFlowTask
+     * 
+     */
+    public static CompletableFuture<GetDataFlowTaskResult> getDataFlowTaskPlain(GetDataFlowTaskPlainArgs args) {
+        return getDataFlowTaskPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::VEPFS::DataFlowTask
+     * 
+     */
+    public static Output<GetDataFlowTaskResult> getDataFlowTask(GetDataFlowTaskArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:vepfs/getDataFlowTask:getDataFlowTask", TypeShape.of(GetDataFlowTaskResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::VEPFS::DataFlowTask
+     * 
+     */
+    public static Output<GetDataFlowTaskResult> getDataFlowTask(GetDataFlowTaskArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:vepfs/getDataFlowTask:getDataFlowTask", TypeShape.of(GetDataFlowTaskResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::VEPFS::DataFlowTask
+     * 
+     */
+    public static CompletableFuture<GetDataFlowTaskResult> getDataFlowTaskPlain(GetDataFlowTaskPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:vepfs/getDataFlowTask:getDataFlowTask", TypeShape.of(GetDataFlowTaskResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::VEPFS::DataFlowTask
+     * 
+     */
+    public static Output<GetDataFlowTasksResult> getDataFlowTasks() {
+        return getDataFlowTasks(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::VEPFS::DataFlowTask
+     * 
+     */
+    public static CompletableFuture<GetDataFlowTasksResult> getDataFlowTasksPlain() {
+        return getDataFlowTasksPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::VEPFS::DataFlowTask
+     * 
+     */
+    public static Output<GetDataFlowTasksResult> getDataFlowTasks(InvokeArgs args) {
+        return getDataFlowTasks(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::VEPFS::DataFlowTask
+     * 
+     */
+    public static CompletableFuture<GetDataFlowTasksResult> getDataFlowTasksPlain(InvokeArgs args) {
+        return getDataFlowTasksPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::VEPFS::DataFlowTask
+     * 
+     */
+    public static Output<GetDataFlowTasksResult> getDataFlowTasks(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:vepfs/getDataFlowTasks:getDataFlowTasks", TypeShape.of(GetDataFlowTasksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::VEPFS::DataFlowTask
+     * 
+     */
+    public static Output<GetDataFlowTasksResult> getDataFlowTasks(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:vepfs/getDataFlowTasks:getDataFlowTasks", TypeShape.of(GetDataFlowTasksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::VEPFS::DataFlowTask
+     * 
+     */
+    public static CompletableFuture<GetDataFlowTasksResult> getDataFlowTasksPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:vepfs/getDataFlowTasks:getDataFlowTasks", TypeShape.of(GetDataFlowTasksResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Volcengine::VEPFS::Fileset
      * 
