@@ -714,6 +714,13 @@
                             }
                         }
                     },
+                    "origin_cert_check": {
+                        "fields": {
+                            "cert_info_list": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
                     "origin_rewrite": {
                         "fields": {
                             "origin_rewrite_rule": {
@@ -878,6 +885,13 @@
                                         }
                                     }
                                 }
+                            }
+                        }
+                    },
+                    "rule_engine": {
+                        "fields": {
+                            "rules": {
+                                "maxItemsOne": false
                             }
                         }
                     },
@@ -6198,6 +6212,13 @@
                             }
                         }
                     },
+                    "origin_cert_check": {
+                        "fields": {
+                            "cert_info_list": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
                     "origin_rewrite": {
                         "fields": {
                             "origin_rewrite_rule": {
@@ -6362,6 +6383,13 @@
                                         }
                                     }
                                 }
+                            }
+                        }
+                    },
+                    "rule_engine": {
+                        "fields": {
+                            "rules": {
+                                "maxItemsOne": false
                             }
                         }
                     },

@@ -19,6 +19,10 @@ namespace Volcengine.Pulumi.Volcenginecc.Cloudmonitor.Outputs
         /// </summary>
         public readonly string? ComparisonOperator;
         /// <summary>
+        /// Evaluation window (minutes)
+        /// </summary>
+        public readonly int? EvaluationWindow;
+        /// <summary>
         /// Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
         /// </summary>
         public readonly string? MetricName;
@@ -35,6 +39,10 @@ namespace Volcengine.Pulumi.Volcenginecc.Cloudmonitor.Outputs
         /// </summary>
         public readonly string? Statistics;
         /// <summary>
+        /// Sub-namespace
+        /// </summary>
+        public readonly string? SubNamespace;
+        /// <summary>
         /// Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
         /// </summary>
         public readonly string? Threshold;
@@ -42,6 +50,8 @@ namespace Volcengine.Pulumi.Volcenginecc.Cloudmonitor.Outputs
         [OutputConstructor]
         private RuleCondition(
             string? comparisonOperator,
+
+            int? evaluationWindow,
 
             string? metricName,
 
@@ -51,13 +61,17 @@ namespace Volcengine.Pulumi.Volcenginecc.Cloudmonitor.Outputs
 
             string? statistics,
 
+            string? subNamespace,
+
             string? threshold)
         {
             ComparisonOperator = comparisonOperator;
+            EvaluationWindow = evaluationWindow;
             MetricName = metricName;
             MetricUnit = metricUnit;
             Period = period;
             Statistics = statistics;
+            SubNamespace = subNamespace;
             Threshold = threshold;
         }
     }

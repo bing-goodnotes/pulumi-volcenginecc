@@ -45,6 +45,7 @@ import com.volcengine.volcenginecc.cdn.outputs.DomainRequestBlockRule;
 import com.volcengine.volcenginecc.cdn.outputs.DomainRequestHeader;
 import com.volcengine.volcenginecc.cdn.outputs.DomainResponseHeader;
 import com.volcengine.volcenginecc.cdn.outputs.DomainRewriteHls;
+import com.volcengine.volcenginecc.cdn.outputs.DomainRuleEngine;
 import com.volcengine.volcenginecc.cdn.outputs.DomainSignedUrlAuth;
 import com.volcengine.volcenginecc.cdn.outputs.DomainTag;
 import com.volcengine.volcenginecc.cdn.outputs.DomainTimeout;
@@ -1255,6 +1256,20 @@ public class Domain extends com.pulumi.resources.CustomResource {
      */
     public Output<DomainRewriteHls> rewriteHls() {
         return this.rewriteHls;
+    }
+    /**
+     * Indicates the configuration module for the &#39;Rule Engine&#39; feature. This feature is disabled by default.
+     * 
+     */
+    @Export(name="ruleEngine", refs={DomainRuleEngine.class}, tree="[0]")
+    private Output<DomainRuleEngine> ruleEngine;
+
+    /**
+     * @return Indicates the configuration module for the &#39;Rule Engine&#39; feature. This feature is disabled by default.
+     * 
+     */
+    public Output<DomainRuleEngine> ruleEngine() {
+        return this.ruleEngine;
     }
     /**
      * Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
