@@ -40,6 +40,7 @@ import com.volcengine.volcenginecc.cdn.outputs.GetDomainRequestBlockRule;
 import com.volcengine.volcenginecc.cdn.outputs.GetDomainRequestHeader;
 import com.volcengine.volcenginecc.cdn.outputs.GetDomainResponseHeader;
 import com.volcengine.volcenginecc.cdn.outputs.GetDomainRewriteHls;
+import com.volcengine.volcenginecc.cdn.outputs.GetDomainRuleEngine;
 import com.volcengine.volcenginecc.cdn.outputs.GetDomainSignedUrlAuth;
 import com.volcengine.volcenginecc.cdn.outputs.GetDomainTag;
 import com.volcengine.volcenginecc.cdn.outputs.GetDomainTimeout;
@@ -309,6 +310,11 @@ public final class GetDomainResult {
      * 
      */
     private GetDomainRewriteHls rewriteHls;
+    /**
+     * @return Indicates the configuration module for the &#39;Rule Engine&#39; feature. This feature is disabled by default.
+     * 
+     */
+    private GetDomainRuleEngine ruleEngine;
     /**
      * @return Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
      * 
@@ -719,6 +725,13 @@ public final class GetDomainResult {
         return this.rewriteHls;
     }
     /**
+     * @return Indicates the configuration module for the &#39;Rule Engine&#39; feature. This feature is disabled by default.
+     * 
+     */
+    public GetDomainRuleEngine ruleEngine() {
+        return this.ruleEngine;
+    }
+    /**
      * @return Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
      * 
      */
@@ -849,6 +862,7 @@ public final class GetDomainResult {
         private List<GetDomainRequestHeader> requestHeaders;
         private List<GetDomainResponseHeader> responseHeaders;
         private GetDomainRewriteHls rewriteHls;
+        private GetDomainRuleEngine ruleEngine;
         private String serviceRegion;
         private String serviceType;
         private GetDomainSignedUrlAuth signedUrlAuth;
@@ -913,6 +927,7 @@ public final class GetDomainResult {
     	      this.requestHeaders = defaults.requestHeaders;
     	      this.responseHeaders = defaults.responseHeaders;
     	      this.rewriteHls = defaults.rewriteHls;
+    	      this.ruleEngine = defaults.ruleEngine;
     	      this.serviceRegion = defaults.serviceRegion;
     	      this.serviceType = defaults.serviceType;
     	      this.signedUrlAuth = defaults.signedUrlAuth;
@@ -1364,6 +1379,14 @@ public final class GetDomainResult {
             return this;
         }
         @CustomType.Setter
+        public Builder ruleEngine(GetDomainRuleEngine ruleEngine) {
+            if (ruleEngine == null) {
+              throw new MissingRequiredPropertyException("GetDomainResult", "ruleEngine");
+            }
+            this.ruleEngine = ruleEngine;
+            return this;
+        }
+        @CustomType.Setter
         public Builder serviceRegion(String serviceRegion) {
             if (serviceRegion == null) {
               throw new MissingRequiredPropertyException("GetDomainResult", "serviceRegion");
@@ -1499,6 +1522,7 @@ public final class GetDomainResult {
             _resultValue.requestHeaders = requestHeaders;
             _resultValue.responseHeaders = responseHeaders;
             _resultValue.rewriteHls = rewriteHls;
+            _resultValue.ruleEngine = ruleEngine;
             _resultValue.serviceRegion = serviceRegion;
             _resultValue.serviceType = serviceType;
             _resultValue.signedUrlAuth = signedUrlAuth;
