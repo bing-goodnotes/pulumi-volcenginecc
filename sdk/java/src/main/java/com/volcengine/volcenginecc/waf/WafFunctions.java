@@ -12,16 +12,28 @@ import com.pulumi.resources.InvokeArgs;
 import com.volcengine.volcenginecc.Utilities;
 import com.volcengine.volcenginecc.waf.inputs.GetCcRuleArgs;
 import com.volcengine.volcenginecc.waf.inputs.GetCcRulePlainArgs;
+import com.volcengine.volcenginecc.waf.inputs.GetCustomPageArgs;
+import com.volcengine.volcenginecc.waf.inputs.GetCustomPagePlainArgs;
 import com.volcengine.volcenginecc.waf.inputs.GetDomainArgs;
 import com.volcengine.volcenginecc.waf.inputs.GetDomainPlainArgs;
 import com.volcengine.volcenginecc.waf.inputs.GetHostGroupArgs;
 import com.volcengine.volcenginecc.waf.inputs.GetHostGroupPlainArgs;
+import com.volcengine.volcenginecc.waf.inputs.GetIpGroupArgs;
+import com.volcengine.volcenginecc.waf.inputs.GetIpGroupPlainArgs;
+import com.volcengine.volcenginecc.waf.inputs.GetSystemBotArgs;
+import com.volcengine.volcenginecc.waf.inputs.GetSystemBotPlainArgs;
 import com.volcengine.volcenginecc.waf.outputs.GetCcRuleResult;
 import com.volcengine.volcenginecc.waf.outputs.GetCcRulesResult;
+import com.volcengine.volcenginecc.waf.outputs.GetCustomPageResult;
+import com.volcengine.volcenginecc.waf.outputs.GetCustomPagesResult;
 import com.volcengine.volcenginecc.waf.outputs.GetDomainResult;
 import com.volcengine.volcenginecc.waf.outputs.GetDomainsResult;
 import com.volcengine.volcenginecc.waf.outputs.GetHostGroupResult;
 import com.volcengine.volcenginecc.waf.outputs.GetHostGroupsResult;
+import com.volcengine.volcenginecc.waf.outputs.GetIpGroupResult;
+import com.volcengine.volcenginecc.waf.outputs.GetIpGroupsResult;
+import com.volcengine.volcenginecc.waf.outputs.GetSystemBotResult;
+import com.volcengine.volcenginecc.waf.outputs.GetSystemBotsResult;
 import java.util.concurrent.CompletableFuture;
 
 public final class WafFunctions {
@@ -108,6 +120,90 @@ public final class WafFunctions {
      */
     public static CompletableFuture<GetCcRulesResult> getCcRulesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("volcenginecc:waf/getCcRules:getCcRules", TypeShape.of(GetCcRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::WAF::CustomPage
+     * 
+     */
+    public static Output<GetCustomPageResult> getCustomPage(GetCustomPageArgs args) {
+        return getCustomPage(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::WAF::CustomPage
+     * 
+     */
+    public static CompletableFuture<GetCustomPageResult> getCustomPagePlain(GetCustomPagePlainArgs args) {
+        return getCustomPagePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::WAF::CustomPage
+     * 
+     */
+    public static Output<GetCustomPageResult> getCustomPage(GetCustomPageArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:waf/getCustomPage:getCustomPage", TypeShape.of(GetCustomPageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::WAF::CustomPage
+     * 
+     */
+    public static Output<GetCustomPageResult> getCustomPage(GetCustomPageArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:waf/getCustomPage:getCustomPage", TypeShape.of(GetCustomPageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::WAF::CustomPage
+     * 
+     */
+    public static CompletableFuture<GetCustomPageResult> getCustomPagePlain(GetCustomPagePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:waf/getCustomPage:getCustomPage", TypeShape.of(GetCustomPageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::CustomPage
+     * 
+     */
+    public static Output<GetCustomPagesResult> getCustomPages() {
+        return getCustomPages(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::CustomPage
+     * 
+     */
+    public static CompletableFuture<GetCustomPagesResult> getCustomPagesPlain() {
+        return getCustomPagesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::CustomPage
+     * 
+     */
+    public static Output<GetCustomPagesResult> getCustomPages(InvokeArgs args) {
+        return getCustomPages(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::CustomPage
+     * 
+     */
+    public static CompletableFuture<GetCustomPagesResult> getCustomPagesPlain(InvokeArgs args) {
+        return getCustomPagesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::CustomPage
+     * 
+     */
+    public static Output<GetCustomPagesResult> getCustomPages(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:waf/getCustomPages:getCustomPages", TypeShape.of(GetCustomPagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::CustomPage
+     * 
+     */
+    public static Output<GetCustomPagesResult> getCustomPages(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:waf/getCustomPages:getCustomPages", TypeShape.of(GetCustomPagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::CustomPage
+     * 
+     */
+    public static CompletableFuture<GetCustomPagesResult> getCustomPagesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:waf/getCustomPages:getCustomPages", TypeShape.of(GetCustomPagesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Volcengine::WAF::Domain
@@ -276,5 +372,173 @@ public final class WafFunctions {
      */
     public static CompletableFuture<GetHostGroupsResult> getHostGroupsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("volcenginecc:waf/getHostGroups:getHostGroups", TypeShape.of(GetHostGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::WAF::IpGroup
+     * 
+     */
+    public static Output<GetIpGroupResult> getIpGroup(GetIpGroupArgs args) {
+        return getIpGroup(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::WAF::IpGroup
+     * 
+     */
+    public static CompletableFuture<GetIpGroupResult> getIpGroupPlain(GetIpGroupPlainArgs args) {
+        return getIpGroupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::WAF::IpGroup
+     * 
+     */
+    public static Output<GetIpGroupResult> getIpGroup(GetIpGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:waf/getIpGroup:getIpGroup", TypeShape.of(GetIpGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::WAF::IpGroup
+     * 
+     */
+    public static Output<GetIpGroupResult> getIpGroup(GetIpGroupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:waf/getIpGroup:getIpGroup", TypeShape.of(GetIpGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::WAF::IpGroup
+     * 
+     */
+    public static CompletableFuture<GetIpGroupResult> getIpGroupPlain(GetIpGroupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:waf/getIpGroup:getIpGroup", TypeShape.of(GetIpGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::IpGroup
+     * 
+     */
+    public static Output<GetIpGroupsResult> getIpGroups() {
+        return getIpGroups(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::IpGroup
+     * 
+     */
+    public static CompletableFuture<GetIpGroupsResult> getIpGroupsPlain() {
+        return getIpGroupsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::IpGroup
+     * 
+     */
+    public static Output<GetIpGroupsResult> getIpGroups(InvokeArgs args) {
+        return getIpGroups(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::IpGroup
+     * 
+     */
+    public static CompletableFuture<GetIpGroupsResult> getIpGroupsPlain(InvokeArgs args) {
+        return getIpGroupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::IpGroup
+     * 
+     */
+    public static Output<GetIpGroupsResult> getIpGroups(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:waf/getIpGroups:getIpGroups", TypeShape.of(GetIpGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::IpGroup
+     * 
+     */
+    public static Output<GetIpGroupsResult> getIpGroups(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:waf/getIpGroups:getIpGroups", TypeShape.of(GetIpGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::IpGroup
+     * 
+     */
+    public static CompletableFuture<GetIpGroupsResult> getIpGroupsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:waf/getIpGroups:getIpGroups", TypeShape.of(GetIpGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::WAF::SystemBot
+     * 
+     */
+    public static Output<GetSystemBotResult> getSystemBot(GetSystemBotArgs args) {
+        return getSystemBot(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::WAF::SystemBot
+     * 
+     */
+    public static CompletableFuture<GetSystemBotResult> getSystemBotPlain(GetSystemBotPlainArgs args) {
+        return getSystemBotPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::WAF::SystemBot
+     * 
+     */
+    public static Output<GetSystemBotResult> getSystemBot(GetSystemBotArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:waf/getSystemBot:getSystemBot", TypeShape.of(GetSystemBotResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::WAF::SystemBot
+     * 
+     */
+    public static Output<GetSystemBotResult> getSystemBot(GetSystemBotArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:waf/getSystemBot:getSystemBot", TypeShape.of(GetSystemBotResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::WAF::SystemBot
+     * 
+     */
+    public static CompletableFuture<GetSystemBotResult> getSystemBotPlain(GetSystemBotPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:waf/getSystemBot:getSystemBot", TypeShape.of(GetSystemBotResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::SystemBot
+     * 
+     */
+    public static Output<GetSystemBotsResult> getSystemBots() {
+        return getSystemBots(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::SystemBot
+     * 
+     */
+    public static CompletableFuture<GetSystemBotsResult> getSystemBotsPlain() {
+        return getSystemBotsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::SystemBot
+     * 
+     */
+    public static Output<GetSystemBotsResult> getSystemBots(InvokeArgs args) {
+        return getSystemBots(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::SystemBot
+     * 
+     */
+    public static CompletableFuture<GetSystemBotsResult> getSystemBotsPlain(InvokeArgs args) {
+        return getSystemBotsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::SystemBot
+     * 
+     */
+    public static Output<GetSystemBotsResult> getSystemBots(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:waf/getSystemBots:getSystemBots", TypeShape.of(GetSystemBotsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::SystemBot
+     * 
+     */
+    public static Output<GetSystemBotsResult> getSystemBots(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:waf/getSystemBots:getSystemBots", TypeShape.of(GetSystemBotsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::SystemBot
+     * 
+     */
+    public static CompletableFuture<GetSystemBotsResult> getSystemBotsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:waf/getSystemBots:getSystemBots", TypeShape.of(GetSystemBotsResult.class), args, Utilities.withVersion(options));
     }
 }

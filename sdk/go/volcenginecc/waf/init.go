@@ -23,10 +23,16 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "volcenginecc:waf/ccRule:CcRule":
 		r = &CcRule{}
+	case "volcenginecc:waf/customPage:CustomPage":
+		r = &CustomPage{}
 	case "volcenginecc:waf/domain:Domain":
 		r = &Domain{}
 	case "volcenginecc:waf/hostGroup:HostGroup":
 		r = &HostGroup{}
+	case "volcenginecc:waf/ipGroup:IpGroup":
+		r = &IpGroup{}
+	case "volcenginecc:waf/systemBot:SystemBot":
+		r = &SystemBot{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -47,12 +53,27 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"volcenginecc",
+		"waf/customPage",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"volcenginecc",
 		"waf/domain",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"volcenginecc",
 		"waf/hostGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"volcenginecc",
+		"waf/ipGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"volcenginecc",
+		"waf/systemBot",
 		&module{version},
 	)
 }

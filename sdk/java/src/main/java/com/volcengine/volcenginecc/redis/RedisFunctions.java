@@ -18,6 +18,8 @@ import com.volcengine.volcenginecc.redis.inputs.GetEndpointPublicAddressArgs;
 import com.volcengine.volcenginecc.redis.inputs.GetEndpointPublicAddressPlainArgs;
 import com.volcengine.volcenginecc.redis.inputs.GetInstanceArgs;
 import com.volcengine.volcenginecc.redis.inputs.GetInstancePlainArgs;
+import com.volcengine.volcenginecc.redis.inputs.GetKeyScanJobArgs;
+import com.volcengine.volcenginecc.redis.inputs.GetKeyScanJobPlainArgs;
 import com.volcengine.volcenginecc.redis.inputs.GetParameterGroupArgs;
 import com.volcengine.volcenginecc.redis.inputs.GetParameterGroupPlainArgs;
 import com.volcengine.volcenginecc.redis.outputs.GetAccountResult;
@@ -28,6 +30,8 @@ import com.volcengine.volcenginecc.redis.outputs.GetEndpointPublicAddressResult;
 import com.volcengine.volcenginecc.redis.outputs.GetEndpointPublicAddressesResult;
 import com.volcengine.volcenginecc.redis.outputs.GetInstanceResult;
 import com.volcengine.volcenginecc.redis.outputs.GetInstancesResult;
+import com.volcengine.volcenginecc.redis.outputs.GetKeyScanJobResult;
+import com.volcengine.volcenginecc.redis.outputs.GetKeyScanJobsResult;
 import com.volcengine.volcenginecc.redis.outputs.GetParameterGroupResult;
 import com.volcengine.volcenginecc.redis.outputs.GetParameterGroupsResult;
 import java.util.concurrent.CompletableFuture;
@@ -368,6 +372,90 @@ public final class RedisFunctions {
      */
     public static CompletableFuture<GetInstancesResult> getInstancesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("volcenginecc:redis/getInstances:getInstances", TypeShape.of(GetInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::Redis::KeyScanJob
+     * 
+     */
+    public static Output<GetKeyScanJobResult> getKeyScanJob(GetKeyScanJobArgs args) {
+        return getKeyScanJob(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::Redis::KeyScanJob
+     * 
+     */
+    public static CompletableFuture<GetKeyScanJobResult> getKeyScanJobPlain(GetKeyScanJobPlainArgs args) {
+        return getKeyScanJobPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::Redis::KeyScanJob
+     * 
+     */
+    public static Output<GetKeyScanJobResult> getKeyScanJob(GetKeyScanJobArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:redis/getKeyScanJob:getKeyScanJob", TypeShape.of(GetKeyScanJobResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::Redis::KeyScanJob
+     * 
+     */
+    public static Output<GetKeyScanJobResult> getKeyScanJob(GetKeyScanJobArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:redis/getKeyScanJob:getKeyScanJob", TypeShape.of(GetKeyScanJobResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::Redis::KeyScanJob
+     * 
+     */
+    public static CompletableFuture<GetKeyScanJobResult> getKeyScanJobPlain(GetKeyScanJobPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:redis/getKeyScanJob:getKeyScanJob", TypeShape.of(GetKeyScanJobResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::Redis::KeyScanJob
+     * 
+     */
+    public static Output<GetKeyScanJobsResult> getKeyScanJobs() {
+        return getKeyScanJobs(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::Redis::KeyScanJob
+     * 
+     */
+    public static CompletableFuture<GetKeyScanJobsResult> getKeyScanJobsPlain() {
+        return getKeyScanJobsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::Redis::KeyScanJob
+     * 
+     */
+    public static Output<GetKeyScanJobsResult> getKeyScanJobs(InvokeArgs args) {
+        return getKeyScanJobs(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::Redis::KeyScanJob
+     * 
+     */
+    public static CompletableFuture<GetKeyScanJobsResult> getKeyScanJobsPlain(InvokeArgs args) {
+        return getKeyScanJobsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::Redis::KeyScanJob
+     * 
+     */
+    public static Output<GetKeyScanJobsResult> getKeyScanJobs(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:redis/getKeyScanJobs:getKeyScanJobs", TypeShape.of(GetKeyScanJobsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::Redis::KeyScanJob
+     * 
+     */
+    public static Output<GetKeyScanJobsResult> getKeyScanJobs(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:redis/getKeyScanJobs:getKeyScanJobs", TypeShape.of(GetKeyScanJobsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::Redis::KeyScanJob
+     * 
+     */
+    public static CompletableFuture<GetKeyScanJobsResult> getKeyScanJobsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:redis/getKeyScanJobs:getKeyScanJobs", TypeShape.of(GetKeyScanJobsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Volcengine::Redis::ParameterGroup

@@ -29,6 +29,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &EndpointPublicAddress{}
 	case "volcenginecc:redis/instance:Instance":
 		r = &Instance{}
+	case "volcenginecc:redis/keyScanJob:KeyScanJob":
+		r = &KeyScanJob{}
 	case "volcenginecc:redis/parameterGroup:ParameterGroup":
 		r = &ParameterGroup{}
 	default:
@@ -62,6 +64,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"volcenginecc",
 		"redis/instance",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"volcenginecc",
+		"redis/keyScanJob",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

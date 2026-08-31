@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "volcenginecc:ecs/command:Command":
 		r = &Command{}
+	case "volcenginecc:ecs/dedicatedHostCluster:DedicatedHostCluster":
+		r = &DedicatedHostCluster{}
 	case "volcenginecc:ecs/deploymentSet:DeploymentSet":
 		r = &DeploymentSet{}
 	case "volcenginecc:ecs/hpcCluster:HpcCluster":
@@ -57,6 +59,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"volcenginecc",
 		"ecs/command",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"volcenginecc",
+		"ecs/dedicatedHostCluster",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
