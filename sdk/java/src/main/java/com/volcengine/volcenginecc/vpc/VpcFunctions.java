@@ -30,6 +30,8 @@ import com.volcengine.volcenginecc.vpc.inputs.GetIpamPoolArgs;
 import com.volcengine.volcenginecc.vpc.inputs.GetIpamPoolPlainArgs;
 import com.volcengine.volcenginecc.vpc.inputs.GetIpamScopeArgs;
 import com.volcengine.volcenginecc.vpc.inputs.GetIpamScopePlainArgs;
+import com.volcengine.volcenginecc.vpc.inputs.GetIpv4GatewayArgs;
+import com.volcengine.volcenginecc.vpc.inputs.GetIpv4GatewayPlainArgs;
 import com.volcengine.volcenginecc.vpc.inputs.GetIpv6AddressBandwidthArgs;
 import com.volcengine.volcenginecc.vpc.inputs.GetIpv6AddressBandwidthPlainArgs;
 import com.volcengine.volcenginecc.vpc.inputs.GetIpv6GatewayArgs;
@@ -74,6 +76,8 @@ import com.volcengine.volcenginecc.vpc.outputs.GetIpamResult;
 import com.volcengine.volcenginecc.vpc.outputs.GetIpamScopeResult;
 import com.volcengine.volcenginecc.vpc.outputs.GetIpamScopesResult;
 import com.volcengine.volcenginecc.vpc.outputs.GetIpamsResult;
+import com.volcengine.volcenginecc.vpc.outputs.GetIpv4GatewayResult;
+import com.volcengine.volcenginecc.vpc.outputs.GetIpv4GatewaysResult;
 import com.volcengine.volcenginecc.vpc.outputs.GetIpv6AddressBandwidthResult;
 import com.volcengine.volcenginecc.vpc.outputs.GetIpv6AddressBandwidthsResult;
 import com.volcengine.volcenginecc.vpc.outputs.GetIpv6GatewayResult;
@@ -940,6 +944,90 @@ public final class VpcFunctions {
      */
     public static CompletableFuture<GetIpamsResult> getIpamsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("volcenginecc:vpc/getIpams:getIpams", TypeShape.of(GetIpamsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::VPC::Ipv4Gateway
+     * 
+     */
+    public static Output<GetIpv4GatewayResult> getIpv4Gateway(GetIpv4GatewayArgs args) {
+        return getIpv4Gateway(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::VPC::Ipv4Gateway
+     * 
+     */
+    public static CompletableFuture<GetIpv4GatewayResult> getIpv4GatewayPlain(GetIpv4GatewayPlainArgs args) {
+        return getIpv4GatewayPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::VPC::Ipv4Gateway
+     * 
+     */
+    public static Output<GetIpv4GatewayResult> getIpv4Gateway(GetIpv4GatewayArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:vpc/getIpv4Gateway:getIpv4Gateway", TypeShape.of(GetIpv4GatewayResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::VPC::Ipv4Gateway
+     * 
+     */
+    public static Output<GetIpv4GatewayResult> getIpv4Gateway(GetIpv4GatewayArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:vpc/getIpv4Gateway:getIpv4Gateway", TypeShape.of(GetIpv4GatewayResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::VPC::Ipv4Gateway
+     * 
+     */
+    public static CompletableFuture<GetIpv4GatewayResult> getIpv4GatewayPlain(GetIpv4GatewayPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:vpc/getIpv4Gateway:getIpv4Gateway", TypeShape.of(GetIpv4GatewayResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::VPC::Ipv4Gateway
+     * 
+     */
+    public static Output<GetIpv4GatewaysResult> getIpv4Gateways() {
+        return getIpv4Gateways(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::VPC::Ipv4Gateway
+     * 
+     */
+    public static CompletableFuture<GetIpv4GatewaysResult> getIpv4GatewaysPlain() {
+        return getIpv4GatewaysPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::VPC::Ipv4Gateway
+     * 
+     */
+    public static Output<GetIpv4GatewaysResult> getIpv4Gateways(InvokeArgs args) {
+        return getIpv4Gateways(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::VPC::Ipv4Gateway
+     * 
+     */
+    public static CompletableFuture<GetIpv4GatewaysResult> getIpv4GatewaysPlain(InvokeArgs args) {
+        return getIpv4GatewaysPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::VPC::Ipv4Gateway
+     * 
+     */
+    public static Output<GetIpv4GatewaysResult> getIpv4Gateways(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:vpc/getIpv4Gateways:getIpv4Gateways", TypeShape.of(GetIpv4GatewaysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::VPC::Ipv4Gateway
+     * 
+     */
+    public static Output<GetIpv4GatewaysResult> getIpv4Gateways(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:vpc/getIpv4Gateways:getIpv4Gateways", TypeShape.of(GetIpv4GatewaysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::VPC::Ipv4Gateway
+     * 
+     */
+    public static CompletableFuture<GetIpv4GatewaysResult> getIpv4GatewaysPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:vpc/getIpv4Gateways:getIpv4Gateways", TypeShape.of(GetIpv4GatewaysResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Volcengine::VPC::Ipv6AddressBandwidth

@@ -14,6 +14,8 @@ import com.volcengine.volcenginecc.iam.inputs.GetAccesskeyArgs;
 import com.volcengine.volcenginecc.iam.inputs.GetAccesskeyPlainArgs;
 import com.volcengine.volcenginecc.iam.inputs.GetAllowedIpAddressArgs;
 import com.volcengine.volcenginecc.iam.inputs.GetAllowedIpAddressPlainArgs;
+import com.volcengine.volcenginecc.iam.inputs.GetApiKeyArgs;
+import com.volcengine.volcenginecc.iam.inputs.GetApiKeyPlainArgs;
 import com.volcengine.volcenginecc.iam.inputs.GetGroupArgs;
 import com.volcengine.volcenginecc.iam.inputs.GetGroupPlainArgs;
 import com.volcengine.volcenginecc.iam.inputs.GetOauthProviderArgs;
@@ -34,6 +36,8 @@ import com.volcengine.volcenginecc.iam.outputs.GetAccesskeyResult;
 import com.volcengine.volcenginecc.iam.outputs.GetAccesskeysResult;
 import com.volcengine.volcenginecc.iam.outputs.GetAllowedIpAddressResult;
 import com.volcengine.volcenginecc.iam.outputs.GetAllowedIpAddressesResult;
+import com.volcengine.volcenginecc.iam.outputs.GetApiKeyResult;
+import com.volcengine.volcenginecc.iam.outputs.GetApiKeysResult;
 import com.volcengine.volcenginecc.iam.outputs.GetGroupResult;
 import com.volcengine.volcenginecc.iam.outputs.GetGroupsResult;
 import com.volcengine.volcenginecc.iam.outputs.GetOauthProviderResult;
@@ -220,6 +224,90 @@ public final class IamFunctions {
      */
     public static CompletableFuture<GetAllowedIpAddressesResult> getAllowedIpAddressesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("volcenginecc:iam/getAllowedIpAddresses:getAllowedIpAddresses", TypeShape.of(GetAllowedIpAddressesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::IAM::ApiKey
+     * 
+     */
+    public static Output<GetApiKeyResult> getApiKey(GetApiKeyArgs args) {
+        return getApiKey(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::IAM::ApiKey
+     * 
+     */
+    public static CompletableFuture<GetApiKeyResult> getApiKeyPlain(GetApiKeyPlainArgs args) {
+        return getApiKeyPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::IAM::ApiKey
+     * 
+     */
+    public static Output<GetApiKeyResult> getApiKey(GetApiKeyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:iam/getApiKey:getApiKey", TypeShape.of(GetApiKeyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::IAM::ApiKey
+     * 
+     */
+    public static Output<GetApiKeyResult> getApiKey(GetApiKeyArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:iam/getApiKey:getApiKey", TypeShape.of(GetApiKeyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::IAM::ApiKey
+     * 
+     */
+    public static CompletableFuture<GetApiKeyResult> getApiKeyPlain(GetApiKeyPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:iam/getApiKey:getApiKey", TypeShape.of(GetApiKeyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::IAM::ApiKey
+     * 
+     */
+    public static Output<GetApiKeysResult> getApiKeys() {
+        return getApiKeys(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::IAM::ApiKey
+     * 
+     */
+    public static CompletableFuture<GetApiKeysResult> getApiKeysPlain() {
+        return getApiKeysPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::IAM::ApiKey
+     * 
+     */
+    public static Output<GetApiKeysResult> getApiKeys(InvokeArgs args) {
+        return getApiKeys(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::IAM::ApiKey
+     * 
+     */
+    public static CompletableFuture<GetApiKeysResult> getApiKeysPlain(InvokeArgs args) {
+        return getApiKeysPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::IAM::ApiKey
+     * 
+     */
+    public static Output<GetApiKeysResult> getApiKeys(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:iam/getApiKeys:getApiKeys", TypeShape.of(GetApiKeysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::IAM::ApiKey
+     * 
+     */
+    public static Output<GetApiKeysResult> getApiKeys(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:iam/getApiKeys:getApiKeys", TypeShape.of(GetApiKeysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::IAM::ApiKey
+     * 
+     */
+    public static CompletableFuture<GetApiKeysResult> getApiKeysPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:iam/getApiKeys:getApiKeys", TypeShape.of(GetApiKeysResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Volcengine::IAM::Group

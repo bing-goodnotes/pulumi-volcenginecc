@@ -12,6 +12,8 @@ import com.pulumi.resources.InvokeArgs;
 import com.volcengine.volcenginecc.Utilities;
 import com.volcengine.volcenginecc.ecs.inputs.GetCommandArgs;
 import com.volcengine.volcenginecc.ecs.inputs.GetCommandPlainArgs;
+import com.volcengine.volcenginecc.ecs.inputs.GetDedicatedHostClusterArgs;
+import com.volcengine.volcenginecc.ecs.inputs.GetDedicatedHostClusterPlainArgs;
 import com.volcengine.volcenginecc.ecs.inputs.GetDeploymentSetArgs;
 import com.volcengine.volcenginecc.ecs.inputs.GetDeploymentSetPlainArgs;
 import com.volcengine.volcenginecc.ecs.inputs.GetHpcClusterArgs;
@@ -32,6 +34,8 @@ import com.volcengine.volcenginecc.ecs.inputs.GetScheduledInstanceArgs;
 import com.volcengine.volcenginecc.ecs.inputs.GetScheduledInstancePlainArgs;
 import com.volcengine.volcenginecc.ecs.outputs.GetCommandResult;
 import com.volcengine.volcenginecc.ecs.outputs.GetCommandsResult;
+import com.volcengine.volcenginecc.ecs.outputs.GetDedicatedHostClusterResult;
+import com.volcengine.volcenginecc.ecs.outputs.GetDedicatedHostClustersResult;
 import com.volcengine.volcenginecc.ecs.outputs.GetDeploymentSetResult;
 import com.volcengine.volcenginecc.ecs.outputs.GetDeploymentSetsResult;
 import com.volcengine.volcenginecc.ecs.outputs.GetHpcClusterResult;
@@ -136,6 +140,90 @@ public final class EcsFunctions {
      */
     public static CompletableFuture<GetCommandsResult> getCommandsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("volcenginecc:ecs/getCommands:getCommands", TypeShape.of(GetCommandsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::ECS::DedicatedHostCluster
+     * 
+     */
+    public static Output<GetDedicatedHostClusterResult> getDedicatedHostCluster(GetDedicatedHostClusterArgs args) {
+        return getDedicatedHostCluster(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::ECS::DedicatedHostCluster
+     * 
+     */
+    public static CompletableFuture<GetDedicatedHostClusterResult> getDedicatedHostClusterPlain(GetDedicatedHostClusterPlainArgs args) {
+        return getDedicatedHostClusterPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::ECS::DedicatedHostCluster
+     * 
+     */
+    public static Output<GetDedicatedHostClusterResult> getDedicatedHostCluster(GetDedicatedHostClusterArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:ecs/getDedicatedHostCluster:getDedicatedHostCluster", TypeShape.of(GetDedicatedHostClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::ECS::DedicatedHostCluster
+     * 
+     */
+    public static Output<GetDedicatedHostClusterResult> getDedicatedHostCluster(GetDedicatedHostClusterArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:ecs/getDedicatedHostCluster:getDedicatedHostCluster", TypeShape.of(GetDedicatedHostClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::ECS::DedicatedHostCluster
+     * 
+     */
+    public static CompletableFuture<GetDedicatedHostClusterResult> getDedicatedHostClusterPlain(GetDedicatedHostClusterPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:ecs/getDedicatedHostCluster:getDedicatedHostCluster", TypeShape.of(GetDedicatedHostClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::ECS::DedicatedHostCluster
+     * 
+     */
+    public static Output<GetDedicatedHostClustersResult> getDedicatedHostClusters() {
+        return getDedicatedHostClusters(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::ECS::DedicatedHostCluster
+     * 
+     */
+    public static CompletableFuture<GetDedicatedHostClustersResult> getDedicatedHostClustersPlain() {
+        return getDedicatedHostClustersPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::ECS::DedicatedHostCluster
+     * 
+     */
+    public static Output<GetDedicatedHostClustersResult> getDedicatedHostClusters(InvokeArgs args) {
+        return getDedicatedHostClusters(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::ECS::DedicatedHostCluster
+     * 
+     */
+    public static CompletableFuture<GetDedicatedHostClustersResult> getDedicatedHostClustersPlain(InvokeArgs args) {
+        return getDedicatedHostClustersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::ECS::DedicatedHostCluster
+     * 
+     */
+    public static Output<GetDedicatedHostClustersResult> getDedicatedHostClusters(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:ecs/getDedicatedHostClusters:getDedicatedHostClusters", TypeShape.of(GetDedicatedHostClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::ECS::DedicatedHostCluster
+     * 
+     */
+    public static Output<GetDedicatedHostClustersResult> getDedicatedHostClusters(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:ecs/getDedicatedHostClusters:getDedicatedHostClusters", TypeShape.of(GetDedicatedHostClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::ECS::DedicatedHostCluster
+     * 
+     */
+    public static CompletableFuture<GetDedicatedHostClustersResult> getDedicatedHostClustersPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:ecs/getDedicatedHostClusters:getDedicatedHostClusters", TypeShape.of(GetDedicatedHostClustersResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Volcengine::ECS::DeploymentSet

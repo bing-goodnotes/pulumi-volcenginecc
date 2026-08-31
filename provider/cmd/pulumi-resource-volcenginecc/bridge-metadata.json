@@ -1559,6 +1559,21 @@
             "volcenginecc_cr_repository": {
                 "current": "volcenginecc:cr/repository:Repository"
             },
+            "volcenginecc_cr_robot_account": {
+                "current": "volcenginecc:cr/robotAccount:RobotAccount",
+                "fields": {
+                    "permissions": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "actions": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "volcenginecc_cr_vpc_endpoint": {
                 "current": "volcenginecc:cr/vpcEndpoint:VpcEndpoint",
                 "fields": {
@@ -1638,6 +1653,24 @@
                         "maxItemsOne": false
                     },
                     "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "volcenginecc_ecs_dedicated_host_cluster": {
+                "current": "volcenginecc:ecs/dedicatedHostCluster:DedicatedHostCluster",
+                "fields": {
+                    "dedicated_host_cluster_capacity": {
+                        "fields": {
+                            "available_instance_types": {
+                                "maxItemsOne": false
+                            },
+                            "local_volume_capacities": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "dedicated_host_ids": {
                         "maxItemsOne": false
                     }
                 }
@@ -2398,6 +2431,9 @@
                         "maxItemsOne": false
                     }
                 }
+            },
+            "volcenginecc_iam_api_key": {
+                "current": "volcenginecc:iam/apiKey:ApiKey"
             },
             "volcenginecc_iam_group": {
                 "current": "volcenginecc:iam/group:Group",
@@ -3414,6 +3450,9 @@
                         "maxItemsOne": false
                     }
                 }
+            },
+            "volcenginecc_redis_key_scan_job": {
+                "current": "volcenginecc:redis/keyScanJob:KeyScanJob"
             },
             "volcenginecc_redis_parameter_group": {
                 "current": "volcenginecc:redis/parameterGroup:ParameterGroup",
@@ -4953,6 +4992,9 @@
                     }
                 }
             },
+            "volcenginecc_vpc_ipv4_gateway": {
+                "current": "volcenginecc:vpc/ipv4Gateway:Ipv4Gateway"
+            },
             "volcenginecc_vpc_ipv6_address_bandwidth": {
                 "current": "volcenginecc:vpc/ipv6AddressBandwidth:Ipv6AddressBandwidth",
                 "fields": {
@@ -5208,6 +5250,18 @@
                     }
                 }
             },
+            "volcenginecc_waf_custom_page": {
+                "current": "volcenginecc:waf/customPage:CustomPage",
+                "fields": {
+                    "accurate": {
+                        "fields": {
+                            "accurate_rules": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    }
+                }
+            },
             "volcenginecc_waf_domain": {
                 "current": "volcenginecc:waf/domain:Domain",
                 "fields": {
@@ -5278,6 +5332,20 @@
                         "maxItemsOne": false
                     }
                 }
+            },
+            "volcenginecc_waf_ip_group": {
+                "current": "volcenginecc:waf/ipGroup:IpGroup",
+                "fields": {
+                    "ip_list": {
+                        "maxItemsOne": false
+                    },
+                    "related_rules": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "volcenginecc_waf_system_bot": {
+                "current": "volcenginecc:waf/systemBot:SystemBot"
             }
         },
         "datasources": {
@@ -7369,6 +7437,29 @@
             "volcenginecc_cr_repository": {
                 "current": "volcenginecc:cr/getRepository:getRepository"
             },
+            "volcenginecc_cr_robot_account": {
+                "current": "volcenginecc:cr/getRobotAccount:getRobotAccount",
+                "fields": {
+                    "permissions": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "actions": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "volcenginecc_cr_robot_accounts": {
+                "current": "volcenginecc:cr/getRobotAccounts:getRobotAccounts",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "volcenginecc_cr_vpc_endpoint": {
                 "current": "volcenginecc:cr/getVpcEndpoint:getVpcEndpoint",
                 "fields": {
@@ -7534,6 +7625,32 @@
             },
             "volcenginecc_ecs_commands": {
                 "current": "volcenginecc:ecs/getCommands:getCommands",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "volcenginecc_ecs_dedicated_host_cluster": {
+                "current": "volcenginecc:ecs/getDedicatedHostCluster:getDedicatedHostCluster",
+                "fields": {
+                    "dedicated_host_cluster_capacity": {
+                        "fields": {
+                            "available_instance_types": {
+                                "maxItemsOne": false
+                            },
+                            "local_volume_capacities": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "dedicated_host_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "volcenginecc_ecs_dedicated_host_clusters": {
+                "current": "volcenginecc:ecs/getDedicatedHostClusters:getDedicatedHostClusters",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -8566,6 +8683,17 @@
             },
             "volcenginecc_iam_allowed_ip_addresses": {
                 "current": "volcenginecc:iam/getAllowedIpAddresses:getAllowedIpAddresses",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "volcenginecc_iam_api_key": {
+                "current": "volcenginecc:iam/getApiKey:getApiKey"
+            },
+            "volcenginecc_iam_api_keys": {
+                "current": "volcenginecc:iam/getApiKeys:getApiKeys",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -10219,6 +10347,17 @@
             },
             "volcenginecc_redis_instances": {
                 "current": "volcenginecc:redis/getInstances:getInstances",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "volcenginecc_redis_key_scan_job": {
+                "current": "volcenginecc:redis/getKeyScanJob:getKeyScanJob"
+            },
+            "volcenginecc_redis_key_scan_jobs": {
+                "current": "volcenginecc:redis/getKeyScanJobs:getKeyScanJobs",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -12581,6 +12720,17 @@
                     }
                 }
             },
+            "volcenginecc_vpc_ipv4_gateway": {
+                "current": "volcenginecc:vpc/getIpv4Gateway:getIpv4Gateway"
+            },
+            "volcenginecc_vpc_ipv4_gateways": {
+                "current": "volcenginecc:vpc/getIpv4Gateways:getIpv4Gateways",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "volcenginecc_vpc_ipv6_address_bandwidth": {
                 "current": "volcenginecc:vpc/getIpv6AddressBandwidth:getIpv6AddressBandwidth",
                 "fields": {
@@ -13009,6 +13159,26 @@
                     }
                 }
             },
+            "volcenginecc_waf_custom_page": {
+                "current": "volcenginecc:waf/getCustomPage:getCustomPage",
+                "fields": {
+                    "accurate": {
+                        "fields": {
+                            "accurate_rules": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    }
+                }
+            },
+            "volcenginecc_waf_custom_pages": {
+                "current": "volcenginecc:waf/getCustomPages:getCustomPages",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "volcenginecc_waf_domain": {
                 "current": "volcenginecc:waf/getDomain:getDomain",
                 "fields": {
@@ -13095,6 +13265,36 @@
                         "maxItemsOne": false
                     }
                 }
+            },
+            "volcenginecc_waf_ip_group": {
+                "current": "volcenginecc:waf/getIpGroup:getIpGroup",
+                "fields": {
+                    "ip_list": {
+                        "maxItemsOne": false
+                    },
+                    "related_rules": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "volcenginecc_waf_ip_groups": {
+                "current": "volcenginecc:waf/getIpGroups:getIpGroups",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "volcenginecc_waf_system_bot": {
+                "current": "volcenginecc:waf/getSystemBot:getSystemBot"
+            },
+            "volcenginecc_waf_system_bots": {
+                "current": "volcenginecc:waf/getSystemBots:getSystemBots",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
             }
         }
     },
@@ -13165,6 +13365,7 @@
             "volcenginecc_cr_name_space": {},
             "volcenginecc_cr_registry": {},
             "volcenginecc_cr_repository": {},
+            "volcenginecc_cr_robot_account": {},
             "volcenginecc_cr_vpc_endpoint": {},
             "volcenginecc_directconnect_bgp_peer": {},
             "volcenginecc_directconnect_connection": {},
@@ -13176,6 +13377,7 @@
             "volcenginecc_dns_record": {},
             "volcenginecc_dns_zone": {},
             "volcenginecc_ecs_command": {},
+            "volcenginecc_ecs_dedicated_host_cluster": {},
             "volcenginecc_ecs_deployment_set": {},
             "volcenginecc_ecs_hpc_cluster": {},
             "volcenginecc_ecs_image": {},
@@ -13210,6 +13412,7 @@
             "volcenginecc_hbase_instance": {},
             "volcenginecc_iam_accesskey": {},
             "volcenginecc_iam_allowed_ip_address": {},
+            "volcenginecc_iam_api_key": {},
             "volcenginecc_iam_group": {},
             "volcenginecc_iam_oauth_provider": {},
             "volcenginecc_iam_oidc_provider": {},
@@ -13287,6 +13490,7 @@
             "volcenginecc_redis_allow_list": {},
             "volcenginecc_redis_endpoint_public_address": {},
             "volcenginecc_redis_instance": {},
+            "volcenginecc_redis_key_scan_job": {},
             "volcenginecc_redis_parameter_group": {},
             "volcenginecc_resourceshare_resource_share": {},
             "volcenginecc_rocketmq_access_key": {},
@@ -13383,6 +13587,7 @@
             "volcenginecc_vpc_ipam": {},
             "volcenginecc_vpc_ipam_pool": {},
             "volcenginecc_vpc_ipam_scope": {},
+            "volcenginecc_vpc_ipv4_gateway": {},
             "volcenginecc_vpc_ipv6_address_bandwidth": {},
             "volcenginecc_vpc_ipv6_gateway": {},
             "volcenginecc_vpc_network_acl": {},
@@ -13402,8 +13607,11 @@
             "volcenginecc_vpn_vpn_gateway": {},
             "volcenginecc_vpn_vpn_gateway_route": {},
             "volcenginecc_waf_cc_rule": {},
+            "volcenginecc_waf_custom_page": {},
             "volcenginecc_waf_domain": {},
-            "volcenginecc_waf_host_group": {}
+            "volcenginecc_waf_host_group": {},
+            "volcenginecc_waf_ip_group": {},
+            "volcenginecc_waf_system_bot": {}
         }
     }
 }

@@ -29,6 +29,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Registry{}
 	case "volcenginecc:cr/repository:Repository":
 		r = &Repository{}
+	case "volcenginecc:cr/robotAccount:RobotAccount":
+		r = &RobotAccount{}
 	case "volcenginecc:cr/vpcEndpoint:VpcEndpoint":
 		r = &VpcEndpoint{}
 	default:
@@ -62,6 +64,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"volcenginecc",
 		"cr/repository",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"volcenginecc",
+		"cr/robotAccount",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

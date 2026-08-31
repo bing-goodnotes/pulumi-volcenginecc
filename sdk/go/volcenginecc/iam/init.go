@@ -25,6 +25,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Accesskey{}
 	case "volcenginecc:iam/allowedIpAddress:AllowedIpAddress":
 		r = &AllowedIpAddress{}
+	case "volcenginecc:iam/apiKey:ApiKey":
+		r = &ApiKey{}
 	case "volcenginecc:iam/group:Group":
 		r = &Group{}
 	case "volcenginecc:iam/oauthProvider:OauthProvider":
@@ -62,6 +64,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"volcenginecc",
 		"iam/allowedIpAddress",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"volcenginecc",
+		"iam/apiKey",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

@@ -689,6 +689,14 @@ _utilities.register(
  },
  {
   "pkg": "volcenginecc",
+  "mod": "cr/robotAccount",
+  "fqn": "pulumi_volcenginecc.cr",
+  "classes": {
+   "volcenginecc:cr/robotAccount:RobotAccount": "RobotAccount"
+  }
+ },
+ {
+  "pkg": "volcenginecc",
   "mod": "cr/vpcEndpoint",
   "fqn": "pulumi_volcenginecc.cr",
   "classes": {
@@ -773,6 +781,14 @@ _utilities.register(
   "fqn": "pulumi_volcenginecc.ecs",
   "classes": {
    "volcenginecc:ecs/command:Command": "Command"
+  }
+ },
+ {
+  "pkg": "volcenginecc",
+  "mod": "ecs/dedicatedHostCluster",
+  "fqn": "pulumi_volcenginecc.ecs",
+  "classes": {
+   "volcenginecc:ecs/dedicatedHostCluster:DedicatedHostCluster": "DedicatedHostCluster"
   }
  },
  {
@@ -1045,6 +1061,14 @@ _utilities.register(
   "fqn": "pulumi_volcenginecc.iam",
   "classes": {
    "volcenginecc:iam/allowedIpAddress:AllowedIpAddress": "AllowedIpAddress"
+  }
+ },
+ {
+  "pkg": "volcenginecc",
+  "mod": "iam/apiKey",
+  "fqn": "pulumi_volcenginecc.iam",
+  "classes": {
+   "volcenginecc:iam/apiKey:ApiKey": "ApiKey"
   }
  },
  {
@@ -1661,6 +1685,14 @@ _utilities.register(
   "fqn": "pulumi_volcenginecc.redis",
   "classes": {
    "volcenginecc:redis/instance:Instance": "Instance"
+  }
+ },
+ {
+  "pkg": "volcenginecc",
+  "mod": "redis/keyScanJob",
+  "fqn": "pulumi_volcenginecc.redis",
+  "classes": {
+   "volcenginecc:redis/keyScanJob:KeyScanJob": "KeyScanJob"
   }
  },
  {
@@ -2433,6 +2465,14 @@ _utilities.register(
  },
  {
   "pkg": "volcenginecc",
+  "mod": "vpc/ipv4Gateway",
+  "fqn": "pulumi_volcenginecc.vpc",
+  "classes": {
+   "volcenginecc:vpc/ipv4Gateway:Ipv4Gateway": "Ipv4Gateway"
+  }
+ },
+ {
+  "pkg": "volcenginecc",
   "mod": "vpc/ipv6AddressBandwidth",
   "fqn": "pulumi_volcenginecc.vpc",
   "classes": {
@@ -2585,6 +2625,14 @@ _utilities.register(
  },
  {
   "pkg": "volcenginecc",
+  "mod": "waf/customPage",
+  "fqn": "pulumi_volcenginecc.waf",
+  "classes": {
+   "volcenginecc:waf/customPage:CustomPage": "CustomPage"
+  }
+ },
+ {
+  "pkg": "volcenginecc",
   "mod": "waf/domain",
   "fqn": "pulumi_volcenginecc.waf",
   "classes": {
@@ -2597,6 +2645,22 @@ _utilities.register(
   "fqn": "pulumi_volcenginecc.waf",
   "classes": {
    "volcenginecc:waf/hostGroup:HostGroup": "HostGroup"
+  }
+ },
+ {
+  "pkg": "volcenginecc",
+  "mod": "waf/ipGroup",
+  "fqn": "pulumi_volcenginecc.waf",
+  "classes": {
+   "volcenginecc:waf/ipGroup:IpGroup": "IpGroup"
+  }
+ },
+ {
+  "pkg": "volcenginecc",
+  "mod": "waf/systemBot",
+  "fqn": "pulumi_volcenginecc.waf",
+  "classes": {
+   "volcenginecc:waf/systemBot:SystemBot": "SystemBot"
   }
  }
 ]
