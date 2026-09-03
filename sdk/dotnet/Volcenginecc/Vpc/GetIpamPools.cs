@@ -13,19 +13,19 @@ namespace Volcengine.Pulumi.Volcenginecc.Vpc
     public static class GetIpamPools
     {
         /// <summary>
-        /// Plural Data Source schema for Volcengine::VPC::IpamPool
+        /// Plural Data Source schema for Volcengine::VPC::IPAMPool
         /// </summary>
         public static Task<GetIpamPoolsResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetIpamPoolsResult>("volcenginecc:vpc/getIpamPools:getIpamPools", InvokeArgs.Empty, options.WithDefaults());
 
         /// <summary>
-        /// Plural Data Source schema for Volcengine::VPC::IpamPool
+        /// Plural Data Source schema for Volcengine::VPC::IPAMPool
         /// </summary>
         public static Output<GetIpamPoolsResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIpamPoolsResult>("volcenginecc:vpc/getIpamPools:getIpamPools", InvokeArgs.Empty, options.WithDefaults());
 
         /// <summary>
-        /// Plural Data Source schema for Volcengine::VPC::IpamPool
+        /// Plural Data Source schema for Volcengine::VPC::IPAMPool
         /// </summary>
         public static Output<GetIpamPoolsResult> Invoke(InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetIpamPoolsResult>("volcenginecc:vpc/getIpamPools:getIpamPools", InvokeArgs.Empty, options.WithDefaults());

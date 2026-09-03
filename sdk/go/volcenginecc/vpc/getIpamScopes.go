@@ -11,7 +11,7 @@ import (
 	"github.com/volcengine/pulumi-volcenginecc/sdk/go/volcenginecc/internal"
 )
 
-// Plural Data Source schema for Volcengine::VPC::IpamScope
+// Plural Data Source schema for Volcengine::VPC::IPAMScope
 func GetIpamScopes(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIpamScopesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetIpamScopesResult
