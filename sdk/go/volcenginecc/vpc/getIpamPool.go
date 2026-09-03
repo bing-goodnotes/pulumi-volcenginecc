@@ -11,7 +11,7 @@ import (
 	"github.com/volcengine/pulumi-volcenginecc/sdk/go/volcenginecc/internal"
 )
 
-// Data Source schema for Volcengine::VPC::IpamPool
+// Data Source schema for Volcengine::VPC::IPAMPool
 func LookupIpamPool(ctx *pulumi.Context, args *LookupIpamPoolArgs, opts ...pulumi.InvokeOption) (*LookupIpamPoolResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupIpamPoolResult

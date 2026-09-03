@@ -729,168 +729,168 @@ public final class VpcFunctions {
         return Deployment.getInstance().invokeAsync("volcenginecc:vpc/getIpam:getIpam", TypeShape.of(GetIpamResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Data Source schema for Volcengine::VPC::IpamPool
+     * Data Source schema for Volcengine::VPC::IPAMPool
      * 
      */
     public static Output<GetIpamPoolResult> getIpamPool(GetIpamPoolArgs args) {
         return getIpamPool(args, InvokeOptions.Empty);
     }
     /**
-     * Data Source schema for Volcengine::VPC::IpamPool
+     * Data Source schema for Volcengine::VPC::IPAMPool
      * 
      */
     public static CompletableFuture<GetIpamPoolResult> getIpamPoolPlain(GetIpamPoolPlainArgs args) {
         return getIpamPoolPlain(args, InvokeOptions.Empty);
     }
     /**
-     * Data Source schema for Volcengine::VPC::IpamPool
+     * Data Source schema for Volcengine::VPC::IPAMPool
      * 
      */
     public static Output<GetIpamPoolResult> getIpamPool(GetIpamPoolArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("volcenginecc:vpc/getIpamPool:getIpamPool", TypeShape.of(GetIpamPoolResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Data Source schema for Volcengine::VPC::IpamPool
+     * Data Source schema for Volcengine::VPC::IPAMPool
      * 
      */
     public static Output<GetIpamPoolResult> getIpamPool(GetIpamPoolArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("volcenginecc:vpc/getIpamPool:getIpamPool", TypeShape.of(GetIpamPoolResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Data Source schema for Volcengine::VPC::IpamPool
+     * Data Source schema for Volcengine::VPC::IPAMPool
      * 
      */
     public static CompletableFuture<GetIpamPoolResult> getIpamPoolPlain(GetIpamPoolPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("volcenginecc:vpc/getIpamPool:getIpamPool", TypeShape.of(GetIpamPoolResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Plural Data Source schema for Volcengine::VPC::IpamPool
+     * Plural Data Source schema for Volcengine::VPC::IPAMPool
      * 
      */
     public static Output<GetIpamPoolsResult> getIpamPools() {
         return getIpamPools(InvokeArgs.Empty, InvokeOptions.Empty);
     }
     /**
-     * Plural Data Source schema for Volcengine::VPC::IpamPool
+     * Plural Data Source schema for Volcengine::VPC::IPAMPool
      * 
      */
     public static CompletableFuture<GetIpamPoolsResult> getIpamPoolsPlain() {
         return getIpamPoolsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
     }
     /**
-     * Plural Data Source schema for Volcengine::VPC::IpamPool
+     * Plural Data Source schema for Volcengine::VPC::IPAMPool
      * 
      */
     public static Output<GetIpamPoolsResult> getIpamPools(InvokeArgs args) {
         return getIpamPools(args, InvokeOptions.Empty);
     }
     /**
-     * Plural Data Source schema for Volcengine::VPC::IpamPool
+     * Plural Data Source schema for Volcengine::VPC::IPAMPool
      * 
      */
     public static CompletableFuture<GetIpamPoolsResult> getIpamPoolsPlain(InvokeArgs args) {
         return getIpamPoolsPlain(args, InvokeOptions.Empty);
     }
     /**
-     * Plural Data Source schema for Volcengine::VPC::IpamPool
+     * Plural Data Source schema for Volcengine::VPC::IPAMPool
      * 
      */
     public static Output<GetIpamPoolsResult> getIpamPools(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("volcenginecc:vpc/getIpamPools:getIpamPools", TypeShape.of(GetIpamPoolsResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Plural Data Source schema for Volcengine::VPC::IpamPool
+     * Plural Data Source schema for Volcengine::VPC::IPAMPool
      * 
      */
     public static Output<GetIpamPoolsResult> getIpamPools(InvokeArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("volcenginecc:vpc/getIpamPools:getIpamPools", TypeShape.of(GetIpamPoolsResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Plural Data Source schema for Volcengine::VPC::IpamPool
+     * Plural Data Source schema for Volcengine::VPC::IPAMPool
      * 
      */
     public static CompletableFuture<GetIpamPoolsResult> getIpamPoolsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("volcenginecc:vpc/getIpamPools:getIpamPools", TypeShape.of(GetIpamPoolsResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Data Source schema for Volcengine::VPC::IpamScope
+     * Data Source schema for Volcengine::VPC::IPAMScope
      * 
      */
     public static Output<GetIpamScopeResult> getIpamScope(GetIpamScopeArgs args) {
         return getIpamScope(args, InvokeOptions.Empty);
     }
     /**
-     * Data Source schema for Volcengine::VPC::IpamScope
+     * Data Source schema for Volcengine::VPC::IPAMScope
      * 
      */
     public static CompletableFuture<GetIpamScopeResult> getIpamScopePlain(GetIpamScopePlainArgs args) {
         return getIpamScopePlain(args, InvokeOptions.Empty);
     }
     /**
-     * Data Source schema for Volcengine::VPC::IpamScope
+     * Data Source schema for Volcengine::VPC::IPAMScope
      * 
      */
     public static Output<GetIpamScopeResult> getIpamScope(GetIpamScopeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("volcenginecc:vpc/getIpamScope:getIpamScope", TypeShape.of(GetIpamScopeResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Data Source schema for Volcengine::VPC::IpamScope
+     * Data Source schema for Volcengine::VPC::IPAMScope
      * 
      */
     public static Output<GetIpamScopeResult> getIpamScope(GetIpamScopeArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("volcenginecc:vpc/getIpamScope:getIpamScope", TypeShape.of(GetIpamScopeResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Data Source schema for Volcengine::VPC::IpamScope
+     * Data Source schema for Volcengine::VPC::IPAMScope
      * 
      */
     public static CompletableFuture<GetIpamScopeResult> getIpamScopePlain(GetIpamScopePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("volcenginecc:vpc/getIpamScope:getIpamScope", TypeShape.of(GetIpamScopeResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Plural Data Source schema for Volcengine::VPC::IpamScope
+     * Plural Data Source schema for Volcengine::VPC::IPAMScope
      * 
      */
     public static Output<GetIpamScopesResult> getIpamScopes() {
         return getIpamScopes(InvokeArgs.Empty, InvokeOptions.Empty);
     }
     /**
-     * Plural Data Source schema for Volcengine::VPC::IpamScope
+     * Plural Data Source schema for Volcengine::VPC::IPAMScope
      * 
      */
     public static CompletableFuture<GetIpamScopesResult> getIpamScopesPlain() {
         return getIpamScopesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
     }
     /**
-     * Plural Data Source schema for Volcengine::VPC::IpamScope
+     * Plural Data Source schema for Volcengine::VPC::IPAMScope
      * 
      */
     public static Output<GetIpamScopesResult> getIpamScopes(InvokeArgs args) {
         return getIpamScopes(args, InvokeOptions.Empty);
     }
     /**
-     * Plural Data Source schema for Volcengine::VPC::IpamScope
+     * Plural Data Source schema for Volcengine::VPC::IPAMScope
      * 
      */
     public static CompletableFuture<GetIpamScopesResult> getIpamScopesPlain(InvokeArgs args) {
         return getIpamScopesPlain(args, InvokeOptions.Empty);
     }
     /**
-     * Plural Data Source schema for Volcengine::VPC::IpamScope
+     * Plural Data Source schema for Volcengine::VPC::IPAMScope
      * 
      */
     public static Output<GetIpamScopesResult> getIpamScopes(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("volcenginecc:vpc/getIpamScopes:getIpamScopes", TypeShape.of(GetIpamScopesResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Plural Data Source schema for Volcengine::VPC::IpamScope
+     * Plural Data Source schema for Volcengine::VPC::IPAMScope
      * 
      */
     public static Output<GetIpamScopesResult> getIpamScopes(InvokeArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("volcenginecc:vpc/getIpamScopes:getIpamScopes", TypeShape.of(GetIpamScopesResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Plural Data Source schema for Volcengine::VPC::IpamScope
+     * Plural Data Source schema for Volcengine::VPC::IPAMScope
      * 
      */
     public static CompletableFuture<GetIpamScopesResult> getIpamScopesPlain(InvokeArgs args, InvokeOptions options) {

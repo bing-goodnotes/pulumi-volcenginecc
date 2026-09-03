@@ -357,10 +357,6 @@
                 "pcaLeafCertificateId": {
                     "type": "string",
                     "description": "Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.\n"
-                },
-                "san": {
-                    "type": "string",
-                    "description": "If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.\n"
                 }
             },
             "type": "object",
@@ -371,8 +367,7 @@
                         "certificateId",
                         "certificateSource",
                         "domain",
-                        "pcaLeafCertificateId",
-                        "san"
+                        "pcaLeafCertificateId"
                     ]
                 }
             }
@@ -1472,7 +1467,7 @@
                 },
                 "san": {
                     "type": "string",
-                    "description": "If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.\n"
+                    "description": "Separate the certificate's CommonName, extended domain names, and IP addresses with commas.\n"
                 }
             },
             "type": "object",
@@ -83798,6 +83793,14 @@
                     "type": "string",
                     "description": "Email.\n"
                 },
+                "generatePassword": {
+                    "type": "string",
+                    "description": "Generated Password\n"
+                },
+                "generateRandomPassword": {
+                    "type": "boolean",
+                    "description": "Auto Generate Password\n"
+                },
                 "identityType": {
                     "type": "string",
                     "description": "Identity Type.\n"
@@ -83836,6 +83839,8 @@
                 "description",
                 "displayName",
                 "email",
+                "generatePassword",
+                "generateRandomPassword",
                 "identityType",
                 "password",
                 "passwordResetRequired",
@@ -83857,6 +83862,10 @@
                 "email": {
                     "type": "string",
                     "description": "Email.\n"
+                },
+                "generateRandomPassword": {
+                    "type": "boolean",
+                    "description": "Auto Generate Password\n"
                 },
                 "password": {
                     "type": "string",
@@ -83893,6 +83902,14 @@
                     "email": {
                         "type": "string",
                         "description": "Email.\n"
+                    },
+                    "generatePassword": {
+                        "type": "string",
+                        "description": "Generated Password\n"
+                    },
+                    "generateRandomPassword": {
+                        "type": "boolean",
+                        "description": "Auto Generate Password\n"
                     },
                     "identityType": {
                         "type": "string",
@@ -145411,6 +145428,14 @@
                         "description": "Email.\n",
                         "type": "string"
                     },
+                    "generatePassword": {
+                        "description": "Generated Password\n",
+                        "type": "string"
+                    },
+                    "generateRandomPassword": {
+                        "description": "Auto Generate Password\n",
+                        "type": "boolean"
+                    },
                     "id": {
                         "description": "Uniquely identifies the resource.\n",
                         "type": "string"
@@ -145453,6 +145478,8 @@
                     "description",
                     "displayName",
                     "email",
+                    "generatePassword",
+                    "generateRandomPassword",
                     "id",
                     "identityType",
                     "password",
@@ -176362,7 +176389,7 @@
             }
         },
         "volcenginecc:vpc/getIpamPool:getIpamPool": {
-            "description": "Data Source schema for Volcengine::VPC::IpamPool\n",
+            "description": "Data Source schema for Volcengine::VPC::IPAMPool\n",
             "inputs": {
                 "description": "A collection of arguments for invoking getIpamPool.\n",
                 "properties": {
@@ -176509,7 +176536,7 @@
             }
         },
         "volcenginecc:vpc/getIpamPools:getIpamPools": {
-            "description": "Plural Data Source schema for Volcengine::VPC::IpamPool\n",
+            "description": "Plural Data Source schema for Volcengine::VPC::IPAMPool\n",
             "outputs": {
                 "description": "A collection of values returned by getIpamPools.\n",
                 "properties": {
@@ -176533,7 +176560,7 @@
             }
         },
         "volcenginecc:vpc/getIpamScope:getIpamScope": {
-            "description": "Data Source schema for Volcengine::VPC::IpamScope\n",
+            "description": "Data Source schema for Volcengine::VPC::IPAMScope\n",
             "inputs": {
                 "description": "A collection of arguments for invoking getIpamScope.\n",
                 "properties": {
@@ -176635,7 +176662,7 @@
             }
         },
         "volcenginecc:vpc/getIpamScopes:getIpamScopes": {
-            "description": "Plural Data Source schema for Volcengine::VPC::IpamScope\n",
+            "description": "Plural Data Source schema for Volcengine::VPC::IPAMScope\n",
             "outputs": {
                 "description": "A collection of values returned by getIpamScopes.\n",
                 "properties": {
