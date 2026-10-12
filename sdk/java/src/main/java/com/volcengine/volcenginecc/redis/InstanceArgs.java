@@ -6,6 +6,7 @@ package com.volcengine.volcenginecc.redis;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.volcengine.volcenginecc.redis.inputs.InstanceBackupPlanArgs;
 import com.volcengine.volcenginecc.redis.inputs.InstanceBackupRestoreArgs;
 import com.volcengine.volcenginecc.redis.inputs.InstanceConfigureNodeArgs;
 import com.volcengine.volcenginecc.redis.inputs.InstanceTagArgs;
@@ -50,6 +51,21 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Boolean>> autoRenew() {
         return Optional.ofNullable(this.autoRenew);
+    }
+
+    /**
+     * Automatic backup policy for the instance.
+     * 
+     */
+    @Import(name="backupPlan")
+    private @Nullable Output<InstanceBackupPlanArgs> backupPlan;
+
+    /**
+     * @return Automatic backup policy for the instance.
+     * 
+     */
+    public Optional<Output<InstanceBackupPlanArgs>> backupPlan() {
+        return Optional.ofNullable(this.backupPlan);
     }
 
     /**
@@ -436,6 +452,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     private InstanceArgs(InstanceArgs $) {
         this.allowListIds = $.allowListIds;
         this.autoRenew = $.autoRenew;
+        this.backupPlan = $.backupPlan;
         this.backupPointName = $.backupPointName;
         this.backupRestore = $.backupRestore;
         this.chargeType = $.chargeType;
@@ -531,6 +548,27 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder autoRenew(Boolean autoRenew) {
             return autoRenew(Output.of(autoRenew));
+        }
+
+        /**
+         * @param backupPlan Automatic backup policy for the instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupPlan(@Nullable Output<InstanceBackupPlanArgs> backupPlan) {
+            $.backupPlan = backupPlan;
+            return this;
+        }
+
+        /**
+         * @param backupPlan Automatic backup policy for the instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupPlan(InstanceBackupPlanArgs backupPlan) {
+            return backupPlan(Output.of(backupPlan));
         }
 
         /**

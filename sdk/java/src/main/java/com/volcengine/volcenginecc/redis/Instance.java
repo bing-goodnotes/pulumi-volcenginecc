@@ -11,6 +11,7 @@ import com.volcengine.volcenginecc.Utilities;
 import com.volcengine.volcenginecc.redis.InstanceArgs;
 import com.volcengine.volcenginecc.redis.inputs.InstanceState;
 import com.volcengine.volcenginecc.redis.outputs.InstanceBackup;
+import com.volcengine.volcenginecc.redis.outputs.InstanceBackupPlan;
 import com.volcengine.volcenginecc.redis.outputs.InstanceBackupRestore;
 import com.volcengine.volcenginecc.redis.outputs.InstanceCapacity;
 import com.volcengine.volcenginecc.redis.outputs.InstanceConfigureNode;
@@ -129,6 +130,20 @@ public class Instance extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> autoRenew() {
         return this.autoRenew;
+    }
+    /**
+     * Automatic backup policy for the instance.
+     * 
+     */
+    @Export(name="backupPlan", refs={InstanceBackupPlan.class}, tree="[0]")
+    private Output<InstanceBackupPlan> backupPlan;
+
+    /**
+     * @return Automatic backup policy for the instance.
+     * 
+     */
+    public Output<InstanceBackupPlan> backupPlan() {
+        return this.backupPlan;
     }
     /**
      * Set a backup name for the full backup created before changes.

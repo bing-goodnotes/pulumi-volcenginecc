@@ -22,6 +22,8 @@ import com.volcengine.volcenginecc.vke.inputs.GetNodeArgs;
 import com.volcengine.volcenginecc.vke.inputs.GetNodePlainArgs;
 import com.volcengine.volcenginecc.vke.inputs.GetNodePoolArgs;
 import com.volcengine.volcenginecc.vke.inputs.GetNodePoolPlainArgs;
+import com.volcengine.volcenginecc.vke.inputs.GetNodepoolScalingPolicyArgs;
+import com.volcengine.volcenginecc.vke.inputs.GetNodepoolScalingPolicyPlainArgs;
 import com.volcengine.volcenginecc.vke.inputs.GetPermissionArgs;
 import com.volcengine.volcenginecc.vke.inputs.GetPermissionPlainArgs;
 import com.volcengine.volcenginecc.vke.outputs.GetAddonResult;
@@ -35,6 +37,8 @@ import com.volcengine.volcenginecc.vke.outputs.GetKubeconfigsResult;
 import com.volcengine.volcenginecc.vke.outputs.GetNodePoolResult;
 import com.volcengine.volcenginecc.vke.outputs.GetNodePoolsResult;
 import com.volcengine.volcenginecc.vke.outputs.GetNodeResult;
+import com.volcengine.volcenginecc.vke.outputs.GetNodepoolScalingPoliciesResult;
+import com.volcengine.volcenginecc.vke.outputs.GetNodepoolScalingPolicyResult;
 import com.volcengine.volcenginecc.vke.outputs.GetNodesResult;
 import com.volcengine.volcenginecc.vke.outputs.GetPermissionResult;
 import com.volcengine.volcenginecc.vke.outputs.GetPermissionsResult;
@@ -495,6 +499,90 @@ public final class VkeFunctions {
      */
     public static CompletableFuture<GetNodePoolsResult> getNodePoolsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("volcenginecc:vke/getNodePools:getNodePools", TypeShape.of(GetNodePoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::VKE::NodepoolScalingPolicy
+     * 
+     */
+    public static Output<GetNodepoolScalingPoliciesResult> getNodepoolScalingPolicies() {
+        return getNodepoolScalingPolicies(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::VKE::NodepoolScalingPolicy
+     * 
+     */
+    public static CompletableFuture<GetNodepoolScalingPoliciesResult> getNodepoolScalingPoliciesPlain() {
+        return getNodepoolScalingPoliciesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::VKE::NodepoolScalingPolicy
+     * 
+     */
+    public static Output<GetNodepoolScalingPoliciesResult> getNodepoolScalingPolicies(InvokeArgs args) {
+        return getNodepoolScalingPolicies(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::VKE::NodepoolScalingPolicy
+     * 
+     */
+    public static CompletableFuture<GetNodepoolScalingPoliciesResult> getNodepoolScalingPoliciesPlain(InvokeArgs args) {
+        return getNodepoolScalingPoliciesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::VKE::NodepoolScalingPolicy
+     * 
+     */
+    public static Output<GetNodepoolScalingPoliciesResult> getNodepoolScalingPolicies(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:vke/getNodepoolScalingPolicies:getNodepoolScalingPolicies", TypeShape.of(GetNodepoolScalingPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::VKE::NodepoolScalingPolicy
+     * 
+     */
+    public static Output<GetNodepoolScalingPoliciesResult> getNodepoolScalingPolicies(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:vke/getNodepoolScalingPolicies:getNodepoolScalingPolicies", TypeShape.of(GetNodepoolScalingPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::VKE::NodepoolScalingPolicy
+     * 
+     */
+    public static CompletableFuture<GetNodepoolScalingPoliciesResult> getNodepoolScalingPoliciesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:vke/getNodepoolScalingPolicies:getNodepoolScalingPolicies", TypeShape.of(GetNodepoolScalingPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::VKE::NodepoolScalingPolicy
+     * 
+     */
+    public static Output<GetNodepoolScalingPolicyResult> getNodepoolScalingPolicy(GetNodepoolScalingPolicyArgs args) {
+        return getNodepoolScalingPolicy(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::VKE::NodepoolScalingPolicy
+     * 
+     */
+    public static CompletableFuture<GetNodepoolScalingPolicyResult> getNodepoolScalingPolicyPlain(GetNodepoolScalingPolicyPlainArgs args) {
+        return getNodepoolScalingPolicyPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::VKE::NodepoolScalingPolicy
+     * 
+     */
+    public static Output<GetNodepoolScalingPolicyResult> getNodepoolScalingPolicy(GetNodepoolScalingPolicyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:vke/getNodepoolScalingPolicy:getNodepoolScalingPolicy", TypeShape.of(GetNodepoolScalingPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::VKE::NodepoolScalingPolicy
+     * 
+     */
+    public static Output<GetNodepoolScalingPolicyResult> getNodepoolScalingPolicy(GetNodepoolScalingPolicyArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:vke/getNodepoolScalingPolicy:getNodepoolScalingPolicy", TypeShape.of(GetNodepoolScalingPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::VKE::NodepoolScalingPolicy
+     * 
+     */
+    public static CompletableFuture<GetNodepoolScalingPolicyResult> getNodepoolScalingPolicyPlain(GetNodepoolScalingPolicyPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:vke/getNodepoolScalingPolicy:getNodepoolScalingPolicy", TypeShape.of(GetNodepoolScalingPolicyResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Plural Data Source schema for Volcengine::VKE::Node
