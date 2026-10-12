@@ -28,6 +28,8 @@ import com.volcengine.volcenginecc.vpc.inputs.GetIpamArgs;
 import com.volcengine.volcenginecc.vpc.inputs.GetIpamPlainArgs;
 import com.volcengine.volcenginecc.vpc.inputs.GetIpamPoolArgs;
 import com.volcengine.volcenginecc.vpc.inputs.GetIpamPoolPlainArgs;
+import com.volcengine.volcenginecc.vpc.inputs.GetIpamResourceDiscoveryArgs;
+import com.volcengine.volcenginecc.vpc.inputs.GetIpamResourceDiscoveryPlainArgs;
 import com.volcengine.volcenginecc.vpc.inputs.GetIpamScopeArgs;
 import com.volcengine.volcenginecc.vpc.inputs.GetIpamScopePlainArgs;
 import com.volcengine.volcenginecc.vpc.inputs.GetIpv4GatewayArgs;
@@ -72,6 +74,8 @@ import com.volcengine.volcenginecc.vpc.outputs.GetIpPoolResult;
 import com.volcengine.volcenginecc.vpc.outputs.GetIpPoolsResult;
 import com.volcengine.volcenginecc.vpc.outputs.GetIpamPoolResult;
 import com.volcengine.volcenginecc.vpc.outputs.GetIpamPoolsResult;
+import com.volcengine.volcenginecc.vpc.outputs.GetIpamResourceDiscoveriesResult;
+import com.volcengine.volcenginecc.vpc.outputs.GetIpamResourceDiscoveryResult;
 import com.volcengine.volcenginecc.vpc.outputs.GetIpamResult;
 import com.volcengine.volcenginecc.vpc.outputs.GetIpamScopeResult;
 import com.volcengine.volcenginecc.vpc.outputs.GetIpamScopesResult;
@@ -811,6 +815,90 @@ public final class VpcFunctions {
      */
     public static CompletableFuture<GetIpamPoolsResult> getIpamPoolsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("volcenginecc:vpc/getIpamPools:getIpamPools", TypeShape.of(GetIpamPoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::VPC::IPAMResourceDiscovery
+     * 
+     */
+    public static Output<GetIpamResourceDiscoveriesResult> getIpamResourceDiscoveries() {
+        return getIpamResourceDiscoveries(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::VPC::IPAMResourceDiscovery
+     * 
+     */
+    public static CompletableFuture<GetIpamResourceDiscoveriesResult> getIpamResourceDiscoveriesPlain() {
+        return getIpamResourceDiscoveriesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::VPC::IPAMResourceDiscovery
+     * 
+     */
+    public static Output<GetIpamResourceDiscoveriesResult> getIpamResourceDiscoveries(InvokeArgs args) {
+        return getIpamResourceDiscoveries(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::VPC::IPAMResourceDiscovery
+     * 
+     */
+    public static CompletableFuture<GetIpamResourceDiscoveriesResult> getIpamResourceDiscoveriesPlain(InvokeArgs args) {
+        return getIpamResourceDiscoveriesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::VPC::IPAMResourceDiscovery
+     * 
+     */
+    public static Output<GetIpamResourceDiscoveriesResult> getIpamResourceDiscoveries(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:vpc/getIpamResourceDiscoveries:getIpamResourceDiscoveries", TypeShape.of(GetIpamResourceDiscoveriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::VPC::IPAMResourceDiscovery
+     * 
+     */
+    public static Output<GetIpamResourceDiscoveriesResult> getIpamResourceDiscoveries(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:vpc/getIpamResourceDiscoveries:getIpamResourceDiscoveries", TypeShape.of(GetIpamResourceDiscoveriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::VPC::IPAMResourceDiscovery
+     * 
+     */
+    public static CompletableFuture<GetIpamResourceDiscoveriesResult> getIpamResourceDiscoveriesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:vpc/getIpamResourceDiscoveries:getIpamResourceDiscoveries", TypeShape.of(GetIpamResourceDiscoveriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::VPC::IPAMResourceDiscovery
+     * 
+     */
+    public static Output<GetIpamResourceDiscoveryResult> getIpamResourceDiscovery(GetIpamResourceDiscoveryArgs args) {
+        return getIpamResourceDiscovery(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::VPC::IPAMResourceDiscovery
+     * 
+     */
+    public static CompletableFuture<GetIpamResourceDiscoveryResult> getIpamResourceDiscoveryPlain(GetIpamResourceDiscoveryPlainArgs args) {
+        return getIpamResourceDiscoveryPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::VPC::IPAMResourceDiscovery
+     * 
+     */
+    public static Output<GetIpamResourceDiscoveryResult> getIpamResourceDiscovery(GetIpamResourceDiscoveryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:vpc/getIpamResourceDiscovery:getIpamResourceDiscovery", TypeShape.of(GetIpamResourceDiscoveryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::VPC::IPAMResourceDiscovery
+     * 
+     */
+    public static Output<GetIpamResourceDiscoveryResult> getIpamResourceDiscovery(GetIpamResourceDiscoveryArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:vpc/getIpamResourceDiscovery:getIpamResourceDiscovery", TypeShape.of(GetIpamResourceDiscoveryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::VPC::IPAMResourceDiscovery
+     * 
+     */
+    public static CompletableFuture<GetIpamResourceDiscoveryResult> getIpamResourceDiscoveryPlain(GetIpamResourceDiscoveryPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:vpc/getIpamResourceDiscovery:getIpamResourceDiscovery", TypeShape.of(GetIpamResourceDiscoveryResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Volcengine::VPC::IPAMScope

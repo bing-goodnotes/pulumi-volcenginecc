@@ -10,25 +10,117 @@ import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.resources.InvokeArgs;
 import com.volcengine.volcenginecc.Utilities;
+import com.volcengine.volcenginecc.cloudmonitor.inputs.GetAlertTemplateArgs;
+import com.volcengine.volcenginecc.cloudmonitor.inputs.GetAlertTemplatePlainArgs;
 import com.volcengine.volcenginecc.cloudmonitor.inputs.GetContactArgs;
 import com.volcengine.volcenginecc.cloudmonitor.inputs.GetContactGroupArgs;
 import com.volcengine.volcenginecc.cloudmonitor.inputs.GetContactGroupPlainArgs;
 import com.volcengine.volcenginecc.cloudmonitor.inputs.GetContactPlainArgs;
 import com.volcengine.volcenginecc.cloudmonitor.inputs.GetEventRuleArgs;
 import com.volcengine.volcenginecc.cloudmonitor.inputs.GetEventRulePlainArgs;
+import com.volcengine.volcenginecc.cloudmonitor.inputs.GetObjectGroupArgs;
+import com.volcengine.volcenginecc.cloudmonitor.inputs.GetObjectGroupPlainArgs;
 import com.volcengine.volcenginecc.cloudmonitor.inputs.GetRuleArgs;
 import com.volcengine.volcenginecc.cloudmonitor.inputs.GetRulePlainArgs;
+import com.volcengine.volcenginecc.cloudmonitor.outputs.GetAlertTemplateResult;
+import com.volcengine.volcenginecc.cloudmonitor.outputs.GetAlertTemplatesResult;
 import com.volcengine.volcenginecc.cloudmonitor.outputs.GetContactGroupResult;
 import com.volcengine.volcenginecc.cloudmonitor.outputs.GetContactGroupsResult;
 import com.volcengine.volcenginecc.cloudmonitor.outputs.GetContactResult;
 import com.volcengine.volcenginecc.cloudmonitor.outputs.GetContactsResult;
 import com.volcengine.volcenginecc.cloudmonitor.outputs.GetEventRuleResult;
 import com.volcengine.volcenginecc.cloudmonitor.outputs.GetEventRulesResult;
+import com.volcengine.volcenginecc.cloudmonitor.outputs.GetObjectGroupResult;
+import com.volcengine.volcenginecc.cloudmonitor.outputs.GetObjectGroupsResult;
 import com.volcengine.volcenginecc.cloudmonitor.outputs.GetRuleResult;
 import com.volcengine.volcenginecc.cloudmonitor.outputs.GetRulesResult;
 import java.util.concurrent.CompletableFuture;
 
 public final class CloudmonitorFunctions {
+    /**
+     * Data Source schema for Volcengine::CloudMonitor::AlertTemplate
+     * 
+     */
+    public static Output<GetAlertTemplateResult> getAlertTemplate(GetAlertTemplateArgs args) {
+        return getAlertTemplate(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::CloudMonitor::AlertTemplate
+     * 
+     */
+    public static CompletableFuture<GetAlertTemplateResult> getAlertTemplatePlain(GetAlertTemplatePlainArgs args) {
+        return getAlertTemplatePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::CloudMonitor::AlertTemplate
+     * 
+     */
+    public static Output<GetAlertTemplateResult> getAlertTemplate(GetAlertTemplateArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:cloudmonitor/getAlertTemplate:getAlertTemplate", TypeShape.of(GetAlertTemplateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::CloudMonitor::AlertTemplate
+     * 
+     */
+    public static Output<GetAlertTemplateResult> getAlertTemplate(GetAlertTemplateArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:cloudmonitor/getAlertTemplate:getAlertTemplate", TypeShape.of(GetAlertTemplateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::CloudMonitor::AlertTemplate
+     * 
+     */
+    public static CompletableFuture<GetAlertTemplateResult> getAlertTemplatePlain(GetAlertTemplatePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:cloudmonitor/getAlertTemplate:getAlertTemplate", TypeShape.of(GetAlertTemplateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::CloudMonitor::AlertTemplate
+     * 
+     */
+    public static Output<GetAlertTemplatesResult> getAlertTemplates() {
+        return getAlertTemplates(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::CloudMonitor::AlertTemplate
+     * 
+     */
+    public static CompletableFuture<GetAlertTemplatesResult> getAlertTemplatesPlain() {
+        return getAlertTemplatesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::CloudMonitor::AlertTemplate
+     * 
+     */
+    public static Output<GetAlertTemplatesResult> getAlertTemplates(InvokeArgs args) {
+        return getAlertTemplates(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::CloudMonitor::AlertTemplate
+     * 
+     */
+    public static CompletableFuture<GetAlertTemplatesResult> getAlertTemplatesPlain(InvokeArgs args) {
+        return getAlertTemplatesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::CloudMonitor::AlertTemplate
+     * 
+     */
+    public static Output<GetAlertTemplatesResult> getAlertTemplates(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:cloudmonitor/getAlertTemplates:getAlertTemplates", TypeShape.of(GetAlertTemplatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::CloudMonitor::AlertTemplate
+     * 
+     */
+    public static Output<GetAlertTemplatesResult> getAlertTemplates(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:cloudmonitor/getAlertTemplates:getAlertTemplates", TypeShape.of(GetAlertTemplatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::CloudMonitor::AlertTemplate
+     * 
+     */
+    public static CompletableFuture<GetAlertTemplatesResult> getAlertTemplatesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:cloudmonitor/getAlertTemplates:getAlertTemplates", TypeShape.of(GetAlertTemplatesResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Volcengine::CloudMonitor::Contact
      * 
@@ -280,6 +372,90 @@ public final class CloudmonitorFunctions {
      */
     public static CompletableFuture<GetEventRulesResult> getEventRulesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("volcenginecc:cloudmonitor/getEventRules:getEventRules", TypeShape.of(GetEventRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::CloudMonitor::ObjectGroup
+     * 
+     */
+    public static Output<GetObjectGroupResult> getObjectGroup(GetObjectGroupArgs args) {
+        return getObjectGroup(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::CloudMonitor::ObjectGroup
+     * 
+     */
+    public static CompletableFuture<GetObjectGroupResult> getObjectGroupPlain(GetObjectGroupPlainArgs args) {
+        return getObjectGroupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::CloudMonitor::ObjectGroup
+     * 
+     */
+    public static Output<GetObjectGroupResult> getObjectGroup(GetObjectGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:cloudmonitor/getObjectGroup:getObjectGroup", TypeShape.of(GetObjectGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::CloudMonitor::ObjectGroup
+     * 
+     */
+    public static Output<GetObjectGroupResult> getObjectGroup(GetObjectGroupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:cloudmonitor/getObjectGroup:getObjectGroup", TypeShape.of(GetObjectGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::CloudMonitor::ObjectGroup
+     * 
+     */
+    public static CompletableFuture<GetObjectGroupResult> getObjectGroupPlain(GetObjectGroupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:cloudmonitor/getObjectGroup:getObjectGroup", TypeShape.of(GetObjectGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::CloudMonitor::ObjectGroup
+     * 
+     */
+    public static Output<GetObjectGroupsResult> getObjectGroups() {
+        return getObjectGroups(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::CloudMonitor::ObjectGroup
+     * 
+     */
+    public static CompletableFuture<GetObjectGroupsResult> getObjectGroupsPlain() {
+        return getObjectGroupsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::CloudMonitor::ObjectGroup
+     * 
+     */
+    public static Output<GetObjectGroupsResult> getObjectGroups(InvokeArgs args) {
+        return getObjectGroups(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::CloudMonitor::ObjectGroup
+     * 
+     */
+    public static CompletableFuture<GetObjectGroupsResult> getObjectGroupsPlain(InvokeArgs args) {
+        return getObjectGroupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::CloudMonitor::ObjectGroup
+     * 
+     */
+    public static Output<GetObjectGroupsResult> getObjectGroups(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:cloudmonitor/getObjectGroups:getObjectGroups", TypeShape.of(GetObjectGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::CloudMonitor::ObjectGroup
+     * 
+     */
+    public static Output<GetObjectGroupsResult> getObjectGroups(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:cloudmonitor/getObjectGroups:getObjectGroups", TypeShape.of(GetObjectGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::CloudMonitor::ObjectGroup
+     * 
+     */
+    public static CompletableFuture<GetObjectGroupsResult> getObjectGroupsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:cloudmonitor/getObjectGroups:getObjectGroups", TypeShape.of(GetObjectGroupsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Volcengine::CloudMonitor::Rule

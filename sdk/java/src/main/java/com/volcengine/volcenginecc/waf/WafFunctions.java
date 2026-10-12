@@ -10,8 +10,12 @@ import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.resources.InvokeArgs;
 import com.volcengine.volcenginecc.Utilities;
+import com.volcengine.volcenginecc.waf.inputs.GetBotAnalyseProtectRuleArgs;
+import com.volcengine.volcenginecc.waf.inputs.GetBotAnalyseProtectRulePlainArgs;
 import com.volcengine.volcenginecc.waf.inputs.GetCcRuleArgs;
 import com.volcengine.volcenginecc.waf.inputs.GetCcRulePlainArgs;
+import com.volcengine.volcenginecc.waf.inputs.GetCustomBotArgs;
+import com.volcengine.volcenginecc.waf.inputs.GetCustomBotPlainArgs;
 import com.volcengine.volcenginecc.waf.inputs.GetCustomPageArgs;
 import com.volcengine.volcenginecc.waf.inputs.GetCustomPagePlainArgs;
 import com.volcengine.volcenginecc.waf.inputs.GetDomainArgs;
@@ -22,8 +26,12 @@ import com.volcengine.volcenginecc.waf.inputs.GetIpGroupArgs;
 import com.volcengine.volcenginecc.waf.inputs.GetIpGroupPlainArgs;
 import com.volcengine.volcenginecc.waf.inputs.GetSystemBotArgs;
 import com.volcengine.volcenginecc.waf.inputs.GetSystemBotPlainArgs;
+import com.volcengine.volcenginecc.waf.outputs.GetBotAnalyseProtectRuleResult;
+import com.volcengine.volcenginecc.waf.outputs.GetBotAnalyseProtectRulesResult;
 import com.volcengine.volcenginecc.waf.outputs.GetCcRuleResult;
 import com.volcengine.volcenginecc.waf.outputs.GetCcRulesResult;
+import com.volcengine.volcenginecc.waf.outputs.GetCustomBotResult;
+import com.volcengine.volcenginecc.waf.outputs.GetCustomBotsResult;
 import com.volcengine.volcenginecc.waf.outputs.GetCustomPageResult;
 import com.volcengine.volcenginecc.waf.outputs.GetCustomPagesResult;
 import com.volcengine.volcenginecc.waf.outputs.GetDomainResult;
@@ -37,6 +45,90 @@ import com.volcengine.volcenginecc.waf.outputs.GetSystemBotsResult;
 import java.util.concurrent.CompletableFuture;
 
 public final class WafFunctions {
+    /**
+     * Data Source schema for Volcengine::WAF::BotAnalyseProtectRule
+     * 
+     */
+    public static Output<GetBotAnalyseProtectRuleResult> getBotAnalyseProtectRule(GetBotAnalyseProtectRuleArgs args) {
+        return getBotAnalyseProtectRule(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::WAF::BotAnalyseProtectRule
+     * 
+     */
+    public static CompletableFuture<GetBotAnalyseProtectRuleResult> getBotAnalyseProtectRulePlain(GetBotAnalyseProtectRulePlainArgs args) {
+        return getBotAnalyseProtectRulePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::WAF::BotAnalyseProtectRule
+     * 
+     */
+    public static Output<GetBotAnalyseProtectRuleResult> getBotAnalyseProtectRule(GetBotAnalyseProtectRuleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:waf/getBotAnalyseProtectRule:getBotAnalyseProtectRule", TypeShape.of(GetBotAnalyseProtectRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::WAF::BotAnalyseProtectRule
+     * 
+     */
+    public static Output<GetBotAnalyseProtectRuleResult> getBotAnalyseProtectRule(GetBotAnalyseProtectRuleArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:waf/getBotAnalyseProtectRule:getBotAnalyseProtectRule", TypeShape.of(GetBotAnalyseProtectRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::WAF::BotAnalyseProtectRule
+     * 
+     */
+    public static CompletableFuture<GetBotAnalyseProtectRuleResult> getBotAnalyseProtectRulePlain(GetBotAnalyseProtectRulePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:waf/getBotAnalyseProtectRule:getBotAnalyseProtectRule", TypeShape.of(GetBotAnalyseProtectRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::BotAnalyseProtectRule
+     * 
+     */
+    public static Output<GetBotAnalyseProtectRulesResult> getBotAnalyseProtectRules() {
+        return getBotAnalyseProtectRules(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::BotAnalyseProtectRule
+     * 
+     */
+    public static CompletableFuture<GetBotAnalyseProtectRulesResult> getBotAnalyseProtectRulesPlain() {
+        return getBotAnalyseProtectRulesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::BotAnalyseProtectRule
+     * 
+     */
+    public static Output<GetBotAnalyseProtectRulesResult> getBotAnalyseProtectRules(InvokeArgs args) {
+        return getBotAnalyseProtectRules(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::BotAnalyseProtectRule
+     * 
+     */
+    public static CompletableFuture<GetBotAnalyseProtectRulesResult> getBotAnalyseProtectRulesPlain(InvokeArgs args) {
+        return getBotAnalyseProtectRulesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::BotAnalyseProtectRule
+     * 
+     */
+    public static Output<GetBotAnalyseProtectRulesResult> getBotAnalyseProtectRules(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:waf/getBotAnalyseProtectRules:getBotAnalyseProtectRules", TypeShape.of(GetBotAnalyseProtectRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::BotAnalyseProtectRule
+     * 
+     */
+    public static Output<GetBotAnalyseProtectRulesResult> getBotAnalyseProtectRules(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:waf/getBotAnalyseProtectRules:getBotAnalyseProtectRules", TypeShape.of(GetBotAnalyseProtectRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::BotAnalyseProtectRule
+     * 
+     */
+    public static CompletableFuture<GetBotAnalyseProtectRulesResult> getBotAnalyseProtectRulesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:waf/getBotAnalyseProtectRules:getBotAnalyseProtectRules", TypeShape.of(GetBotAnalyseProtectRulesResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Volcengine::WAF::CcRule
      * 
@@ -120,6 +212,90 @@ public final class WafFunctions {
      */
     public static CompletableFuture<GetCcRulesResult> getCcRulesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("volcenginecc:waf/getCcRules:getCcRules", TypeShape.of(GetCcRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::WAF::CustomBot
+     * 
+     */
+    public static Output<GetCustomBotResult> getCustomBot(GetCustomBotArgs args) {
+        return getCustomBot(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::WAF::CustomBot
+     * 
+     */
+    public static CompletableFuture<GetCustomBotResult> getCustomBotPlain(GetCustomBotPlainArgs args) {
+        return getCustomBotPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Volcengine::WAF::CustomBot
+     * 
+     */
+    public static Output<GetCustomBotResult> getCustomBot(GetCustomBotArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:waf/getCustomBot:getCustomBot", TypeShape.of(GetCustomBotResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::WAF::CustomBot
+     * 
+     */
+    public static Output<GetCustomBotResult> getCustomBot(GetCustomBotArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:waf/getCustomBot:getCustomBot", TypeShape.of(GetCustomBotResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Volcengine::WAF::CustomBot
+     * 
+     */
+    public static CompletableFuture<GetCustomBotResult> getCustomBotPlain(GetCustomBotPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:waf/getCustomBot:getCustomBot", TypeShape.of(GetCustomBotResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::CustomBot
+     * 
+     */
+    public static Output<GetCustomBotsResult> getCustomBots() {
+        return getCustomBots(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::CustomBot
+     * 
+     */
+    public static CompletableFuture<GetCustomBotsResult> getCustomBotsPlain() {
+        return getCustomBotsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::CustomBot
+     * 
+     */
+    public static Output<GetCustomBotsResult> getCustomBots(InvokeArgs args) {
+        return getCustomBots(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::CustomBot
+     * 
+     */
+    public static CompletableFuture<GetCustomBotsResult> getCustomBotsPlain(InvokeArgs args) {
+        return getCustomBotsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::CustomBot
+     * 
+     */
+    public static Output<GetCustomBotsResult> getCustomBots(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:waf/getCustomBots:getCustomBots", TypeShape.of(GetCustomBotsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::CustomBot
+     * 
+     */
+    public static Output<GetCustomBotsResult> getCustomBots(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("volcenginecc:waf/getCustomBots:getCustomBots", TypeShape.of(GetCustomBotsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Volcengine::WAF::CustomBot
+     * 
+     */
+    public static CompletableFuture<GetCustomBotsResult> getCustomBotsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("volcenginecc:waf/getCustomBots:getCustomBots", TypeShape.of(GetCustomBotsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Volcengine::WAF::CustomPage

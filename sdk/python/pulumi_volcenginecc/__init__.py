@@ -19,6 +19,8 @@ if typing.TYPE_CHECKING:
     ark = __ark
     import pulumi_volcenginecc.autoscaling as __autoscaling
     autoscaling = __autoscaling
+    import pulumi_volcenginecc.billing as __billing
+    billing = __billing
     import pulumi_volcenginecc.bmq as __bmq
     bmq = __bmq
     import pulumi_volcenginecc.cbr as __cbr
@@ -91,8 +93,12 @@ if typing.TYPE_CHECKING:
     resourceshare = __resourceshare
     import pulumi_volcenginecc.rocketmq as __rocketmq
     rocketmq = __rocketmq
+    import pulumi_volcenginecc.securitycenter as __securitycenter
+    securitycenter = __securitycenter
     import pulumi_volcenginecc.storageebs as __storageebs
     storageebs = __storageebs
+    import pulumi_volcenginecc.tidb as __tidb
+    tidb = __tidb
     import pulumi_volcenginecc.tls as __tls
     tls = __tls
     import pulumi_volcenginecc.tos as __tos
@@ -122,6 +128,7 @@ else:
     apig = _utilities.lazy_import('pulumi_volcenginecc.apig')
     ark = _utilities.lazy_import('pulumi_volcenginecc.ark')
     autoscaling = _utilities.lazy_import('pulumi_volcenginecc.autoscaling')
+    billing = _utilities.lazy_import('pulumi_volcenginecc.billing')
     bmq = _utilities.lazy_import('pulumi_volcenginecc.bmq')
     cbr = _utilities.lazy_import('pulumi_volcenginecc.cbr')
     cdn = _utilities.lazy_import('pulumi_volcenginecc.cdn')
@@ -158,7 +165,9 @@ else:
     redis = _utilities.lazy_import('pulumi_volcenginecc.redis')
     resourceshare = _utilities.lazy_import('pulumi_volcenginecc.resourceshare')
     rocketmq = _utilities.lazy_import('pulumi_volcenginecc.rocketmq')
+    securitycenter = _utilities.lazy_import('pulumi_volcenginecc.securitycenter')
     storageebs = _utilities.lazy_import('pulumi_volcenginecc.storageebs')
+    tidb = _utilities.lazy_import('pulumi_volcenginecc.tidb')
     tls = _utilities.lazy_import('pulumi_volcenginecc.tls')
     tos = _utilities.lazy_import('pulumi_volcenginecc.tos')
     transitrouter = _utilities.lazy_import('pulumi_volcenginecc.transitrouter')
@@ -325,6 +334,14 @@ _utilities.register(
   "fqn": "pulumi_volcenginecc.autoscaling",
   "classes": {
    "volcenginecc:autoscaling/scalingPolicy:ScalingPolicy": "ScalingPolicy"
+  }
+ },
+ {
+  "pkg": "volcenginecc",
+  "mod": "billing/financialRelation",
+  "fqn": "pulumi_volcenginecc.billing",
+  "classes": {
+   "volcenginecc:billing/financialRelation:FinancialRelation": "FinancialRelation"
   }
  },
  {
@@ -601,6 +618,14 @@ _utilities.register(
  },
  {
   "pkg": "volcenginecc",
+  "mod": "cloudmonitor/alertTemplate",
+  "fqn": "pulumi_volcenginecc.cloudmonitor",
+  "classes": {
+   "volcenginecc:cloudmonitor/alertTemplate:AlertTemplate": "AlertTemplate"
+  }
+ },
+ {
+  "pkg": "volcenginecc",
   "mod": "cloudmonitor/contact",
   "fqn": "pulumi_volcenginecc.cloudmonitor",
   "classes": {
@@ -621,6 +646,14 @@ _utilities.register(
   "fqn": "pulumi_volcenginecc.cloudmonitor",
   "classes": {
    "volcenginecc:cloudmonitor/eventRule:EventRule": "EventRule"
+  }
+ },
+ {
+  "pkg": "volcenginecc",
+  "mod": "cloudmonitor/objectGroup",
+  "fqn": "pulumi_volcenginecc.cloudmonitor",
+  "classes": {
+   "volcenginecc:cloudmonitor/objectGroup:ObjectGroup": "ObjectGroup"
   }
  },
  {
@@ -1753,6 +1786,14 @@ _utilities.register(
  },
  {
   "pkg": "volcenginecc",
+  "mod": "securitycenter/agent",
+  "fqn": "pulumi_volcenginecc.securitycenter",
+  "classes": {
+   "volcenginecc:securitycenter/agent:Agent": "Agent"
+  }
+ },
+ {
+  "pkg": "volcenginecc",
   "mod": "storageebs/snapshot",
   "fqn": "pulumi_volcenginecc.storageebs",
   "classes": {
@@ -1781,6 +1822,22 @@ _utilities.register(
   "fqn": "pulumi_volcenginecc.storageebs",
   "classes": {
    "volcenginecc:storageebs/volume:Volume": "Volume"
+  }
+ },
+ {
+  "pkg": "volcenginecc",
+  "mod": "tidb/branch",
+  "fqn": "pulumi_volcenginecc.tidb",
+  "classes": {
+   "volcenginecc:tidb/branch:Branch": "Branch"
+  }
+ },
+ {
+  "pkg": "volcenginecc",
+  "mod": "tidb/instance",
+  "fqn": "pulumi_volcenginecc.tidb",
+  "classes": {
+   "volcenginecc:tidb/instance:Instance": "Instance"
   }
  },
  {
@@ -2065,6 +2122,14 @@ _utilities.register(
  },
  {
   "pkg": "volcenginecc",
+  "mod": "transitrouter/transitRouterForwardPolicyEntry",
+  "fqn": "pulumi_volcenginecc.transitrouter",
+  "classes": {
+   "volcenginecc:transitrouter/transitRouterForwardPolicyEntry:TransitRouterForwardPolicyEntry": "TransitRouterForwardPolicyEntry"
+  }
+ },
+ {
+  "pkg": "volcenginecc",
   "mod": "transitrouter/transitRouterForwardPolicyTable",
   "fqn": "pulumi_volcenginecc.transitrouter",
   "classes": {
@@ -2085,6 +2150,14 @@ _utilities.register(
   "fqn": "pulumi_volcenginecc.transitrouter",
   "classes": {
    "volcenginecc:transitrouter/transitRouterRouteEntry:TransitRouterRouteEntry": "TransitRouterRouteEntry"
+  }
+ },
+ {
+  "pkg": "volcenginecc",
+  "mod": "transitrouter/transitRouterRoutePolicyTable",
+  "fqn": "pulumi_volcenginecc.transitrouter",
+  "classes": {
+   "volcenginecc:transitrouter/transitRouterRoutePolicyTable:TransitRouterRoutePolicyTable": "TransitRouterRoutePolicyTable"
   }
  },
  {
@@ -2345,6 +2418,14 @@ _utilities.register(
  },
  {
   "pkg": "volcenginecc",
+  "mod": "vke/nodepoolScalingPolicy",
+  "fqn": "pulumi_volcenginecc.vke",
+  "classes": {
+   "volcenginecc:vke/nodepoolScalingPolicy:NodepoolScalingPolicy": "NodepoolScalingPolicy"
+  }
+ },
+ {
+  "pkg": "volcenginecc",
   "mod": "vke/permission",
   "fqn": "pulumi_volcenginecc.vke",
   "classes": {
@@ -2453,6 +2534,14 @@ _utilities.register(
   "fqn": "pulumi_volcenginecc.vpc",
   "classes": {
    "volcenginecc:vpc/ipamPool:IpamPool": "IpamPool"
+  }
+ },
+ {
+  "pkg": "volcenginecc",
+  "mod": "vpc/ipamResourceDiscovery",
+  "fqn": "pulumi_volcenginecc.vpc",
+  "classes": {
+   "volcenginecc:vpc/ipamResourceDiscovery:IpamResourceDiscovery": "IpamResourceDiscovery"
   }
  },
  {
@@ -2617,10 +2706,26 @@ _utilities.register(
  },
  {
   "pkg": "volcenginecc",
+  "mod": "waf/botAnalyseProtectRule",
+  "fqn": "pulumi_volcenginecc.waf",
+  "classes": {
+   "volcenginecc:waf/botAnalyseProtectRule:BotAnalyseProtectRule": "BotAnalyseProtectRule"
+  }
+ },
+ {
+  "pkg": "volcenginecc",
   "mod": "waf/ccRule",
   "fqn": "pulumi_volcenginecc.waf",
   "classes": {
    "volcenginecc:waf/ccRule:CcRule": "CcRule"
+  }
+ },
+ {
+  "pkg": "volcenginecc",
+  "mod": "waf/customBot",
+  "fqn": "pulumi_volcenginecc.waf",
+  "classes": {
+   "volcenginecc:waf/customBot:CustomBot": "CustomBot"
   }
  },
  {

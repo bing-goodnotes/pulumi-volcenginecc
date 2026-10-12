@@ -21,8 +21,12 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "volcenginecc:waf/botAnalyseProtectRule:BotAnalyseProtectRule":
+		r = &BotAnalyseProtectRule{}
 	case "volcenginecc:waf/ccRule:CcRule":
 		r = &CcRule{}
+	case "volcenginecc:waf/customBot:CustomBot":
+		r = &CustomBot{}
 	case "volcenginecc:waf/customPage:CustomPage":
 		r = &CustomPage{}
 	case "volcenginecc:waf/domain:Domain":
@@ -48,7 +52,17 @@ func init() {
 	}
 	pulumi.RegisterResourceModule(
 		"volcenginecc",
+		"waf/botAnalyseProtectRule",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"volcenginecc",
 		"waf/ccRule",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"volcenginecc",
+		"waf/customBot",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
