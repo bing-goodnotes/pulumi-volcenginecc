@@ -102,7 +102,7 @@
             },
             "noProxy": {
                 "type": "string",
-                "description": "Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from VOLCENGINE_NO_PROXY, NO_PROXY, or no_proxy."
+                "description": "Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the configured or environment proxy. It follows standard NO_PROXY matching and can be sourced from VOLCENGINE_NO_PROXY, NO_PROXY, or no_proxy."
             },
             "profile": {
                 "type": "string",
@@ -21971,9 +21971,18 @@
                     "type": "integer",
                     "description": "The duration of the session when making the AssumeRole call. Its value ranges from 900 to 43200(seconds), and default is 3600 seconds.\n"
                 },
+                "noProxy": {
+                    "type": "string",
+                    "description": "Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the AssumeRole proxy. Defaults to VOLCENGINE_ASSUME_ROLE_NO_PROXY, NO_PROXY, then no_proxy. An explicit empty string disables inherited bypass rules. Independent of the top-level\u003cspan pulumi-lang-nodejs=\" noProxy \" pulumi-lang-dotnet=\" NoProxy \" pulumi-lang-go=\" noProxy \" pulumi-lang-python=\" no_proxy \" pulumi-lang-yaml=\" noProxy \" pulumi-lang-java=\" noProxy \" pulumi-lang-hcl=\" no_proxy \"\u003e noProxy \u003c/span\u003eand proxy_include_domains.\n"
+                },
                 "policy": {
                     "type": "string",
                     "description": "A more restrictive policy when making the AssumeRole call\n"
+                },
+                "proxyUrl": {
+                    "type": "string",
+                    "description": "HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for AssumeRole STS requests, including HTTPS requests. Defaults to VOLCENGINE_ASSUME_ROLE_PROXY_URL, then HTTPS_PROXY or\u003cspan pulumi-lang-nodejs=\" httpsProxy \" pulumi-lang-dotnet=\" HttpsProxy \" pulumi-lang-go=\" httpsProxy \" pulumi-lang-python=\" https_proxy \" pulumi-lang-yaml=\" httpsProxy \" pulumi-lang-java=\" httpsProxy \" pulumi-lang-hcl=\" https_proxy \"\u003e httpsProxy \u003c/span\u003efor HTTPS STS endpoints. HTTP_PROXY is not used. Honors assume_role.no_proxy and NO_PROXY. An explicit empty string skips proxy environment defaults. Independent of Cloud Control proxy settings.\n",
+                    "secret": true
                 }
             },
             "type": "object",
@@ -35588,9 +35597,18 @@
                     "type": "integer",
                     "description": "The duration of the session when making the AssumeRole call. Its value ranges from 900 to 43200(seconds), and default is 3600 seconds.\n"
                 },
+                "noProxy": {
+                    "type": "string",
+                    "description": "Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the AssumeRole proxy. Defaults to VOLCENGINE_ASSUME_ROLE_NO_PROXY, NO_PROXY, then no_proxy. An explicit empty string disables inherited bypass rules. Independent of the top-level\u003cspan pulumi-lang-nodejs=\" noProxy \" pulumi-lang-dotnet=\" NoProxy \" pulumi-lang-go=\" noProxy \" pulumi-lang-python=\" no_proxy \" pulumi-lang-yaml=\" noProxy \" pulumi-lang-java=\" noProxy \" pulumi-lang-hcl=\" no_proxy \"\u003e noProxy \u003c/span\u003eand proxy_include_domains.\n"
+                },
                 "policy": {
                     "type": "string",
                     "description": "A more restrictive policy when making the AssumeRole call\n"
+                },
+                "proxyUrl": {
+                    "type": "string",
+                    "description": "HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for AssumeRole STS requests, including HTTPS requests. Defaults to VOLCENGINE_ASSUME_ROLE_PROXY_URL, then HTTPS_PROXY or\u003cspan pulumi-lang-nodejs=\" httpsProxy \" pulumi-lang-dotnet=\" HttpsProxy \" pulumi-lang-go=\" httpsProxy \" pulumi-lang-python=\" https_proxy \" pulumi-lang-yaml=\" httpsProxy \" pulumi-lang-java=\" httpsProxy \" pulumi-lang-hcl=\" https_proxy \"\u003e httpsProxy \u003c/span\u003efor HTTPS STS endpoints. HTTP_PROXY is not used. Honors assume_role.no_proxy and NO_PROXY. An explicit empty string skips proxy environment defaults. Independent of Cloud Control proxy settings.\n",
+                    "secret": true
                 }
             },
             "type": "object",
@@ -75692,7 +75710,7 @@
             },
             "noProxy": {
                 "type": "string",
-                "description": "Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from VOLCENGINE_NO_PROXY, NO_PROXY, or no_proxy."
+                "description": "Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the configured or environment proxy. It follows standard NO_PROXY matching and can be sourced from VOLCENGINE_NO_PROXY, NO_PROXY, or no_proxy."
             },
             "profile": {
                 "type": "string",
@@ -75774,7 +75792,7 @@
             },
             "noProxy": {
                 "type": "string",
-                "description": "Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from VOLCENGINE_NO_PROXY, NO_PROXY, or no_proxy."
+                "description": "Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the configured or environment proxy. It follows standard NO_PROXY matching and can be sourced from VOLCENGINE_NO_PROXY, NO_PROXY, or no_proxy."
             },
             "profile": {
                 "type": "string",
@@ -116112,6 +116130,10 @@
                     "type": "string",
                     "description": "Instance type. Value: HA (high availability edition)\n"
                 },
+                "kmsTrn": {
+                    "type": "string",
+                    "description": "KMS key ring TRN, format: trn:kms:\\n\\n:\\n\\n:keyrings/\\n\\n/keys/\\n\\n. This parameter is required when TDEEnable is true.\n"
+                },
                 "maintenanceWindow": {
                     "$ref": "#/types/volcenginecc:rdspostgresql/InstanceMaintenanceWindow:InstanceMaintenanceWindow",
                     "description": "Instance maintenance window\n"
@@ -116221,6 +116243,7 @@
                 "instanceName",
                 "instanceStatus",
                 "instanceType",
+                "kmsTrn",
                 "maintenanceWindow",
                 "memory",
                 "nodeInfos",
@@ -116263,6 +116286,10 @@
                 "instanceName": {
                     "type": "string",
                     "description": "Instance name\n"
+                },
+                "kmsTrn": {
+                    "type": "string",
+                    "description": "KMS key ring TRN, format: trn:kms:\\n\\n:\\n\\n:keyrings/\\n\\n/keys/\\n\\n. This parameter is required when TDEEnable is true.\n"
                 },
                 "maintenanceWindow": {
                     "$ref": "#/types/volcenginecc:rdspostgresql/InstanceMaintenanceWindow:InstanceMaintenanceWindow",
@@ -116374,6 +116401,10 @@
                     "instanceType": {
                         "type": "string",
                         "description": "Instance type. Value: HA (high availability edition)\n"
+                    },
+                    "kmsTrn": {
+                        "type": "string",
+                        "description": "KMS key ring TRN, format: trn:kms:\\n\\n:\\n\\n:keyrings/\\n\\n/keys/\\n\\n. This parameter is required when TDEEnable is true.\n"
                     },
                     "maintenanceWindow": {
                         "$ref": "#/types/volcenginecc:rdspostgresql/InstanceMaintenanceWindow:InstanceMaintenanceWindow",
@@ -169848,6 +169879,10 @@
                         "description": "Instance type. Value: HA (high availability edition)\n",
                         "type": "string"
                     },
+                    "kmsTrn": {
+                        "description": "KMS key ring TRN, format: trn:kms:\\n\\n:\\n\\n:keyrings/\\n\\n/keys/\\n\\n. This parameter is required when TDEEnable is true.\n",
+                        "type": "string"
+                    },
                     "maintenanceWindow": {
                         "$ref": "#/types/volcenginecc:rdspostgresql/getInstanceMaintenanceWindow:getInstanceMaintenanceWindow",
                         "description": "Instance maintenance window\n"
@@ -169958,6 +169993,7 @@
                     "instanceName",
                     "instanceStatus",
                     "instanceType",
+                    "kmsTrn",
                     "maintenanceWindow",
                     "memory",
                     "nodeInfos",
