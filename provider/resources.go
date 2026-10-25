@@ -18,6 +18,7 @@ package volcenginecc
 
 import (
 	// embed is used to store bridge-metadata.json in the compiled binary
+	"context"
 	_ "embed"
 	"fmt"
 	"path/filepath"
@@ -26,6 +27,7 @@ import (
 
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge/info"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge/tokens"
+	"github.com/pulumi/pulumi/sdk/v3/go/common/resource"
 	"github.com/volcengine/pulumi-volcenginecc/provider/cmd/pulumi-resource-volcenginecc/token"
 	"github.com/volcengine/pulumi-volcenginecc/provider/pkg/version"
 	"github.com/volcengine/terraform-provider-volcenginecc/shim"
@@ -190,6 +192,23 @@ func Provider() tfbridge.ProviderInfo {
 	// JavaScript's built-in Object in NodeNext/CommonJS modules.
 	prov.Resources["volcenginecc_tos_object"].Tok = tfbridge.MakeResource(volcengeccpkg, "tos", "TosObject")
 
+	// GN fork: credential projection (Phase 2 spike). Strip credential-bearing
+	// output properties before they are recorded in Pulumi state, so secrets
+	// never enter the statefile (state-hygiene gate). Applied via bridge-level
+	// TransformOutputs, which runs on Create, Update and Read output paths.
+	credentialStripResources := []string{
+		"volcenginecc_cdn_domain",                             // nested cert config: privateKey, encryptionKey
+		"volcenginecc_certificateservice_child_cert_instance", // privateKey
+		"volcenginecc_iam_user",                               // loginProfile.password
+		"volcenginecc_rocketmq_access_key",                    // secretKey
+		"volcenginecc_rocketmq_topic",                         // accessPolicies[].accessKey
+	}
+	for _, tfName := range credentialStripResources {
+		if r, ok := prov.Resources[tfName]; ok {
+			r.TransformOutputs = stripCredentialProperties
+		}
+	}
+
 	for k := range prov.Resources {
 		// 获取第二跟斜杠后面的值
 		lastPart := extractAndConvertToCamelCase(k)
@@ -221,6 +240,50 @@ func Provider() tfbridge.ProviderInfo {
 	prov.MustApplyAutoAliases()
 
 	return prov
+}
+
+// stripCredentialProperties removes credential-bearing properties (by Pulumi
+// property name, at any nesting depth) from a resource output map before it is
+// stored in Pulumi state.
+func stripCredentialProperties(_ context.Context, props resource.PropertyMap) (resource.PropertyMap, error) {
+	var stripValue func(v resource.PropertyValue) resource.PropertyValue
+	stripValue = func(v resource.PropertyValue) resource.PropertyValue {
+		if v.IsObject() {
+			out := resource.PropertyMap{}
+			for k, elem := range v.ObjectValue() {
+				if credentialPropertyNames[k] {
+					continue
+				}
+				out[k] = stripValue(elem)
+			}
+			return resource.NewObjectProperty(out)
+		}
+		if v.IsArray() {
+			items := v.ArrayValue()
+			out := make([]resource.PropertyValue, len(items))
+			for i, item := range items {
+				out[i] = stripValue(item)
+			}
+			return resource.NewArrayProperty(out)
+		}
+		return v
+	}
+	for k, elem := range props {
+		if credentialPropertyNames[k] {
+			delete(props, k)
+			continue
+		}
+		props[k] = stripValue(elem)
+	}
+	return props, nil
+}
+
+var credentialPropertyNames = map[resource.PropertyKey]bool{
+	"secretKey":     true,
+	"privateKey":    true,
+	"encryptionKey": true,
+	"password":      true,
+	"accessKey":     true,
 }
 
 func extractAndConvertToCamelCase(input string) string {
