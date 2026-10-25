@@ -253,3 +253,5 @@ require (
 )
 
 replace github.com/hashicorp/terraform-plugin-sdk/v2 => github.com/pulumi/terraform-plugin-sdk/v2 v2.0.0-20260318212141-5525259d096b
+
+replace github.com/volcengine/terraform-provider-volcenginecc => github.com/bing-goodnotes/terraform-provider-volcenginecc v0.0.72-gn.1

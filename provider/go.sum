@@ -130,6 +130,8 @@ github.com/bgentry/go-netrc v0.0.0-20140422174119-9fd32a8b3d3d h1:xDfNPAt8lFiC1U
 github.com/bgentry/go-netrc v0.0.0-20140422174119-9fd32a8b3d3d/go.mod h1:6QX/PXZ00z/TKoufEY6K/a0k6AhaJrQKdFe6OfVXsa4=
 github.com/bgentry/speakeasy v0.1.0 h1:ByYyxL9InA1OWqxJqqp2A5pYHUrCiAL6K3J+LKSsQkY=
 github.com/bgentry/speakeasy v0.1.0/go.mod h1:+zsyZBPWlz7T6j88CTgSN5bM796AkVf0kBD4zp0CCIs=
+github.com/bing-goodnotes/terraform-provider-volcenginecc v0.0.72-gn.1 h1:E61dowCCCdpctbz5NCTBhsOt/Hg1F/8a9VJe6pM7Gis=
+github.com/bing-goodnotes/terraform-provider-volcenginecc v0.0.72-gn.1/go.mod h1:0izjBplayn/s266qo3L7eWVbZ3kCVEQwaTFB7aopkBc=
 github.com/blang/semver v3.5.1+incompatible h1:cQNTCjp13qL8KC3Nbxr/y2Bqb63oX6wdnnjpJbkM4JQ=
 github.com/blang/semver v3.5.1+incompatible/go.mod h1:kRBLl5iJ+tD4TcOOxsy/0fnwebNt5EWlYSAyrTnjyyk=
 github.com/bufbuild/protocompile v0.14.1 h1:iA73zAf/fyljNjQKwYzUHD6AD4R8KMasmwa/FBatYVw=
@@ -616,8 +618,6 @@ github.com/vmihailenco/msgpack/v5 v5.4.1 h1:cQriyiUvjTwOHg8QZaPihLWeRAAVoCpE00IU
 github.com/vmihailenco/msgpack/v5 v5.4.1/go.mod h1:GaZTsDaehaPpQVyxrf5mtQlH+pc21PIudVV/E3rRQok=
 github.com/vmihailenco/tagparser/v2 v2.0.0 h1:y09buUbR+b5aycVFQs/g70pqKVZNBmxwAhO7/IwNM9g=
 github.com/vmihailenco/tagparser/v2 v2.0.0/go.mod h1:Wri+At7QHww0WTrCBeu4J6bNtoV6mEfg5OIWRZA9qds=
-github.com/volcengine/terraform-provider-volcenginecc v0.0.72 h1:uezCHHqzarzVaz72itQW1p1UNeeUm0dHYk1J3nvL26k=
-github.com/volcengine/terraform-provider-volcenginecc v0.0.72/go.mod h1:0izjBplayn/s266qo3L7eWVbZ3kCVEQwaTFB7aopkBc=
 github.com/volcengine/volc-sdk-golang v1.0.23 h1:anOslb2Qp6ywnsbyq9jqR0ljuO63kg9PY+4OehIk5R8=
 github.com/volcengine/volc-sdk-golang v1.0.23/go.mod h1:AfG/PZRUkHJ9inETvbjNifTDgut25Wbkm2QoYBTbvyU=
 github.com/volcengine/volcengine-go-sdk v1.2.56 h1:bvXfpbl0Qo0aanMpHZW+SMWWqANW2ScHs1/9HLzEwtM=
